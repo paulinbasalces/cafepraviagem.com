@@ -1,218 +1,218 @@
 [
   {
     "id": 1,
-    "nome": "Guia de Cafeterias Specialty em Aeroportos [Rápido] [Aeroporto]",
-    "categoria": "cafeterias",
-    "emoji": "✈️",
-    "dor_resolvida": "Encontrar café bom antes do embarque sem perder tempo no terminal.",
-    "descricao": "Mapeamento de pontos de café especial em aeroportos com foco em operação ágil, qualidade de extração e conveniência para conexão curta.",
-    "url": "https://cafepraviagem.com/guias/cafeterias-specialty-aeroportos"
+    "nome": "Cold brew concentrado para sair cedo [Preparo Antecipado]",
+    "categoria": "Receitas",
+    "emoji": "🧊",
+    "dor_resolvida": "Evita correria de manhã sem abrir mão de um café gelado consistente.",
+    "descricao": "Uma base concentrada preparada na noite anterior reduz etapas, facilita transporte em garrafa térmica e permite ajustar gelo, água ou leite ao longo do caminho.",
+    "url": "https://pt.wikipedia.org/wiki/Cold_brew"
   },
   {
     "id": 2,
-    "nome": "Cafés To-Go em São Paulo para Rotina Corrida [Cidade] [Executivo]",
-    "categoria": "cafeterias",
-    "emoji": "🏙️",
-    "dor_resolvida": "Achar uma parada rápida e confiável entre reuniões, coworkings e deslocamentos urbanos.",
-    "descricao": "Seleção de cafeterias com serviço eficiente, boa extração e localização útil para quem precisa sair com o copo na mão e seguir o dia.",
-    "url": "https://cafepraviagem.com/guias/cafes-to-go-sao-paulo"
+    "nome": "Café coado direto na mug térmica [Sem Louça Extra]",
+    "categoria": "Receitas",
+    "emoji": "🫗",
+    "dor_resolvida": "Reduz bagunça e elimina a etapa de transferir o café para outro recipiente.",
+    "descricao": "Preparar o coado diretamente no copo térmico simplifica a rotina e ajuda a manter temperatura por mais tempo em manhãs curtas.",
+    "url": "https://www.hario.com/"
   },
   {
     "id": 3,
-    "nome": "Cafeterias de Aeroporto com Perfil Local [Aeroporto] [Curadoria]",
-    "categoria": "cafeterias",
-    "emoji": "🛫",
-    "dor_resolvida": "Evitar redes genéricas e encontrar operações com identidade local e melhor qualidade.",
-    "descricao": "Lista de aeroportos e terminais onde marcas regionais ou roasters independentes oferecem uma experiência mais interessante que o café padronizado.",
-    "url": "https://cafepraviagem.com/guias/cafeterias-aeroporto-perfil-local"
+    "nome": "Latte gelado em duas etapas [Com Leite]",
+    "categoria": "Receitas",
+    "emoji": "🥛",
+    "dor_resolvida": "Ajuda a evitar bebida aguada quando o gelo derrete durante o deslocamento.",
+    "descricao": "Separar base forte de café e leite gelado na montagem final melhora textura, sabor e estabilidade da bebida fora de casa.",
+    "url": "https://en.wikipedia.org/wiki/Latte"
   },
   {
     "id": 4,
-    "nome": "Guia de Specialty Coffee em Lisboa para Nômades [Cidade] [Nômade]",
-    "categoria": "cafeterias",
-    "emoji": "🇵🇹",
-    "dor_resolvida": "Descobrir cafés bons para começar o dia ou encaixar uma pausa produtiva durante o trabalho remoto.",
-    "descricao": "Curadoria de cafeterias com boa bebida, ambiente funcional e localização prática para quem alterna entre caminhada, notebook e compromissos.",
-    "url": "https://cafepraviagem.com/guias/specialty-coffee-lisboa-nomades"
+    "nome": "Flash brew para clima quente [Resfriamento Rápido]",
+    "categoria": "Receitas",
+    "emoji": "🌤️",
+    "dor_resolvida": "Entrega café gelado mais vivo sem precisar esperar horas de infusão.",
+    "descricao": "O preparo quente direto sobre gelo preserva brilho aromático e cria uma bebida refrescante para levar em pouco tempo.",
+    "url": "https://en.wikipedia.org/wiki/Iced_coffee"
   },
   {
     "id": 5,
-    "nome": "Melhores Paradas de Café em Rotas de Mochilão [Mochilão] [Econômico]",
-    "categoria": "cafeterias",
-    "emoji": "🎒",
-    "dor_resolvida": "Encontrar café honesto e memorável sem estourar o orçamento da viagem.",
-    "descricao": "Sugestões de paradas com bom custo-benefício para quem quer beber melhor e manter o ritmo de deslocamento leve e flexível.",
-    "url": "https://cafepraviagem.com/guias/cafe-rotas-mochilao"
+    "nome": "Espresso diluído para viagem [Mais Equilibrado]",
+    "categoria": "Receitas",
+    "emoji": "☕",
+    "dor_resolvida": "Resolve o problema do espresso pequeno demais para acompanhar um deslocamento maior.",
+    "descricao": "Diluir um espresso em água quente controlada cria uma bebida mais longa, portátil e menos agressiva para consumo em trânsito.",
+    "url": "https://pt.wikipedia.org/wiki/Caf%C3%A9_expresso"
   },
   {
     "id": 6,
-    "nome": "Cafeterias em Bairros Criativos para Trabalhar e Sair Rápido [Cidade] [Coworking]",
-    "categoria": "cafeterias",
-    "emoji": "💻",
-    "dor_resolvida": "Ter um ponto de apoio funcional para café, Wi-Fi e produtividade sem depender de grandes redes.",
-    "descricao": "Roteiro de espaços que equilibram boa bebida, ambiente agradável e operação suficientemente rápida para rotinas móveis.",
-    "url": "https://cafepraviagem.com/guias/cafeterias-bairros-criativos"
+    "nome": "Mug térmica com trava de vedação [Antivazamento]",
+    "categoria": "Equipamentos",
+    "emoji": "🧳",
+    "dor_resolvida": "Evita acidentes na mochila, no carro e na bolsa durante o transporte.",
+    "descricao": "Modelos com trava mecânica e vedação confiável ajudam a proteger eletrônicos, documentos e roupa no dia a dia.",
+    "url": "https://www.stanley1913.com/"
   },
   {
     "id": 7,
-    "nome": "AeroPress Go para Mala Compacta [Portátil] [Leve]",
-    "categoria": "equipamentos",
-    "emoji": "☕",
-    "dor_resolvida": "Levar um método confiável de preparo sem ocupar volume excessivo na mochila ou mala.",
-    "descricao": "Análise da AeroPress Go com foco em portabilidade, facilidade de limpeza, velocidade de preparo e adaptação a rotina de viagem.",
-    "url": "https://cafepraviagem.com/reviews/aeropress-go-mala-compacta"
+    "nome": "Moedor manual compacto [Portátil]",
+    "categoria": "Equipamentos",
+    "emoji": "⚙️",
+    "dor_resolvida": "Permite moer perto do consumo mesmo fora de uma cozinha montada.",
+    "descricao": "Moedores compactos são úteis em viagens, hospedagens e kits minimalistas de preparo, preservando mais frescor do café.",
+    "url": "https://1zpresso.coffee/"
   },
   {
     "id": 8,
-    "nome": "Moedor Manual que Cabe no Setup de Viagem [Moedor] [Essencial]",
-    "categoria": "equipamentos",
-    "emoji": "⚙️",
-    "dor_resolvida": "Escolher um moedor portátil sem errar em peso, resistência ou consistência de moagem.",
-    "descricao": "Comparativo entre modelos compactos voltados para quem precisa extrair melhor fora de casa sem montar uma cozinha inteira.",
-    "url": "https://cafepraviagem.com/reviews/moedor-manual-setup-viagem"
+    "nome": "Dripper dobrável de silicone [Kit Leve]",
+    "categoria": "Equipamentos",
+    "emoji": "🧰",
+    "dor_resolvida": "Reduz volume na mochila sem abandonar o café coado.",
+    "descricao": "Um coador dobrável facilita montar um kit portátil com filtro de papel e mug para trabalho híbrido, viagem ou hospedagem.",
+    "url": "https://seatosummit.com/"
   },
   {
     "id": 9,
-    "nome": "Copo Térmico para Aeroporto e Rua [Térmico] [Rápido]",
-    "categoria": "equipamentos",
-    "emoji": "🥤",
-    "dor_resolvida": "Manter a bebida estável por mais tempo e evitar vazamentos durante deslocamentos intensos.",
-    "descricao": "Teste de copos térmicos pensados para mobilidade, vedação, ergonomia e praticidade em filas, metrô e embarques.",
-    "url": "https://cafepraviagem.com/reviews/copo-termico-aeroporto-rua"
+    "nome": "Garrafa térmica de boca larga [Maior Volume]",
+    "categoria": "Equipamentos",
+    "emoji": "🧴",
+    "dor_resolvida": "Ajuda quem precisa levar mais café sem perder temperatura cedo demais.",
+    "descricao": "Garrafa de boca larga facilita limpeza, enchimento e uso prolongado em estrada, escritório ou estudo fora de casa.",
+    "url": "https://www.thermos.com/"
   },
   {
     "id": 10,
-    "nome": "Kit de Café Minimalista para Mochila [Minimalista] [Setup]",
-    "categoria": "equipamentos",
-    "emoji": "🎒",
-    "dor_resolvida": "Montar um setup realmente portátil sem carregar acessórios redundantes.",
-    "descricao": "Seleção de itens essenciais para preparar café em viagens curtas, hospedagens simples e jornadas com pouco espaço disponível.",
-    "url": "https://cafepraviagem.com/reviews/kit-cafe-minimalista-mochila"
+    "nome": "Moedor elétrico compacto de bancada [Casa Pequena]",
+    "categoria": "Equipamentos",
+    "emoji": "🔌",
+    "dor_resolvida": "Ajuda quem tem pouco espaço e precisa acelerar o preparo antes de sair.",
+    "descricao": "Um moedor elétrico pequeno pode ganhar minutos valiosos na rotina matinal e manter o ritual viável em cozinhas compactas.",
+    "url": "https://baratza.com/"
   },
   {
     "id": 11,
-    "nome": "Balança Compacta Vale a Pena em Viagem? [Precisão] [Leve]",
-    "categoria": "equipamentos",
-    "emoji": "⚖️",
-    "dor_resolvida": "Decidir se vale incluir precisão extra na mala ou simplificar o ritual durante deslocamentos.",
-    "descricao": "Avaliação objetiva sobre quando a balança portátil agrega consistência e quando ela só aumenta volume e complexidade.",
-    "url": "https://cafepraviagem.com/reviews/balanca-compacta-viagem"
+    "nome": "Cafeteria com retirada rápida [Pickup]",
+    "categoria": "Cafeterias",
+    "emoji": "🏃",
+    "dor_resolvida": "Diminui tempo perdido em fila quando a pessoa precisa só pegar o café e seguir.",
+    "descricao": "Cafeterias com fluxo de retirada objetiva fazem diferença para quem encaixa o café entre casa, trabalho, academia ou aeroporto.",
+    "url": "https://www.starbucks.com/"
   },
   {
     "id": 12,
-    "nome": "Filtros, Cases e Organização Inteligente [Acessórios] [Organização]",
-    "categoria": "equipamentos",
-    "emoji": "🧳",
-    "dor_resolvida": "Evitar bagunça, filtros amassados e perdas de tempo na hora de preparar café fora de casa.",
-    "descricao": "Guia de organização de acessórios para proteger itens sensíveis e manter o ritual rápido, limpo e repetível.",
-    "url": "https://cafepraviagem.com/reviews/filtros-cases-organizacao"
+    "nome": "Cafeteria que aceita copo do cliente [Refil Friendly]",
+    "categoria": "Cafeterias",
+    "emoji": "♻️",
+    "dor_resolvida": "Facilita manter o próprio recipiente e reduzir descarte no consumo diário.",
+    "descricao": "Locais que aceitam o copo térmico do cliente ajudam a consolidar um ritual mais sustentável e mais estável na rotina.",
+    "url": "https://www.nespresso.com/br/pt/"
   },
   {
     "id": 13,
-    "nome": "Como Levar Café em Grãos na Mala sem Complicar [Logística] [Essencial]",
-    "categoria": "dicas",
-    "emoji": "🧭",
-    "dor_resolvida": "Transportar café sem perder frescor nem criar confusão desnecessária na rotina de viagem.",
-    "descricao": "Dicas sobre quantidade, embalagem, divisão por doses e formas práticas de manter o café utilizável ao longo do trajeto.",
-    "url": "https://cafepraviagem.com/dicas/levar-cafe-em-graos-na-mala"
+    "nome": "Pontos com espresso confiável para levar [Parada Curta]",
+    "categoria": "Cafeterias",
+    "emoji": "🚗",
+    "dor_resolvida": "Evita parar em qualquer lugar e sair com uma bebida ruim só por conveniência.",
+    "descricao": "Ter referências de locais com espresso bem extraído melhora muito a experiência de quem faz pit stops curtos.",
+    "url": "https://pt.wikipedia.org/wiki/Cafeteria"
   },
   {
     "id": 14,
-    "nome": "Pré-check de Café Antes do Voo [Aeroporto] [Checklist]",
-    "categoria": "dicas",
-    "emoji": "🛂",
-    "dor_resolvida": "Evitar embarcar sem saber onde tomar café bom ou como improvisar uma solução rápida.",
-    "descricao": "Checklist rápido para pesquisar opções no terminal, preparar um plano B e organizar sua rotina sem depender de sorte.",
-    "url": "https://cafepraviagem.com/dicas/pre-check-cafe-antes-do-voo"
+    "nome": "Cafeteria de bairro com bom filtrado [Descoberta Local]",
+    "categoria": "Cafeterias",
+    "emoji": "📍",
+    "dor_resolvida": "Ajuda a sair da dependência de redes genéricas quando se quer mais sabor sem perder agilidade.",
+    "descricao": "Mapear cafeterias locais que trabalham bem o filtrado transforma o trajeto diário em algo mais interessante e consistente.",
+    "url": "https://www.google.com/maps"
   },
   {
     "id": 15,
-    "nome": "Como Preparar Café em Hotel sem Cozinha [Hotel] [Prático]",
-    "categoria": "dicas",
-    "emoji": "🏨",
-    "dor_resolvida": "Tomar café melhor em hospedagens com estrutura limitada ou inconsistente.",
-    "descricao": "Sugestões de setup, organização e preparo simples para quartos, studios e acomodações com poucos recursos.",
-    "url": "https://cafepraviagem.com/dicas/preparar-cafe-hotel-sem-cozinha"
+    "nome": "Torra média para rotina diária [Versátil]",
+    "categoria": "Grãos",
+    "emoji": "🔥",
+    "dor_resolvida": "Resolve a indecisão entre grãos complexos demais e torras pesadas para uso recorrente.",
+    "descricao": "Torras médias equilibram doçura, estrutura e versatilidade em métodos diferentes, funcionando bem para quente e gelado.",
+    "url": "https://perfectdailygrind.com/"
   },
   {
     "id": 16,
-    "nome": "Ritual de Café para Reuniões e Dias Corridos [Executivo] [Tempo]",
-    "categoria": "dicas",
-    "emoji": "📅",
-    "dor_resolvida": "Conciliar café bom com agenda apertada e pouca margem para pausas longas.",
-    "descricao": "Estratégias para reduzir fricção, otimizar seu kit e encaixar uma bebida confiável em manhãs de alta demanda.",
-    "url": "https://cafepraviagem.com/dicas/ritual-cafe-dias-corridos"
+    "nome": "Origens com doçura alta para beber na rua [Baixa Acidez]",
+    "categoria": "Grãos",
+    "emoji": "🌰",
+    "dor_resolvida": "Ajuda quem quer um café fácil de beber em movimento, sem exigir tanta análise sensorial.",
+    "descricao": "Grãos com perfil mais doce, corpo médio e baixa acidez costumam funcionar melhor em recipientes fechados e consumo apressado.",
+    "url": "https://sca.coffee/"
   },
   {
     "id": 17,
-    "nome": "Onde Economizar no Setup de Café para Viajar [Econômico] [Compra]",
-    "categoria": "dicas",
-    "emoji": "💸",
-    "dor_resolvida": "Montar um kit funcional sem gastar demais em acessórios que pouco agregam na prática.",
-    "descricao": "Orientação para priorizar itens com maior impacto no sabor e na portabilidade antes de investir em extras.",
-    "url": "https://cafepraviagem.com/dicas/economizar-setup-cafe-viajar"
+    "nome": "Microlotes frutados para café gelado [Perfil Vivo]",
+    "categoria": "Grãos",
+    "emoji": "🍑",
+    "dor_resolvida": "Dá mais personalidade ao café frio, evitando bebida sem graça após gelo e transporte.",
+    "descricao": "Perfis frutados e limpos podem sustentar melhor a experiência sensorial em receitas geladas para viagem.",
+    "url": "https://en.wikipedia.org/wiki/Coffee_bean"
   },
   {
     "id": 18,
-    "nome": "Planejamento de Café para Conexões Longas [Aeroporto] [Planejamento]",
-    "categoria": "dicas",
-    "emoji": "🕓",
-    "dor_resolvida": "Passar horas em conexão sem depender de café ruim, caro ou inconsistente.",
-    "descricao": "Estratégias de rota, escolha de terminal e preparo de contingência para jornadas com escalas longas.",
-    "url": "https://cafepraviagem.com/dicas/planejamento-cafe-conexoes-longas"
+    "nome": "Assinatura de grãos para não faltar café [Reposição]",
+    "categoria": "Grãos",
+    "emoji": "📦",
+    "dor_resolvida": "Evita ficar sem café bom em casa e cair em compras corridas de baixa qualidade.",
+    "descricao": "Assinaturas ajudam a manter estoque, testar perfis novos e estruturar melhor a rotina de quem depende do café antes de sair.",
+    "url": "https://www.mistobox.com/"
   },
   {
     "id": 19,
-    "nome": "Café e Produtividade para Nômades Digitais [Nômade] [Foco]",
-    "categoria": "nomades",
-    "emoji": "🌍",
-    "dor_resolvida": "Criar uma rotina de energia e foco sem depender do acaso em cada cidade.",
-    "descricao": "Reflexões e práticas para integrar café, trabalho remoto, mobilidade e consistência ao longo de diferentes destinos.",
-    "url": "https://cafepraviagem.com/nomades/cafe-produtividade-nomades-digitais"
+    "nome": "Organizador de kit com filtro e dose [Rotina Montada]",
+    "categoria": "Acessórios",
+    "emoji": "🎒",
+    "dor_resolvida": "Evita esquecer peças pequenas na pressa da saída.",
+    "descricao": "Montar um mini kit com dose pré-medida, filtro, guardanapo e colher reduz improviso e torna o preparo portátil mais fluido.",
+    "url": "https://www.muji.com/"
   },
   {
     "id": 20,
-    "nome": "Mapa Mental do Café Ideal para Coworking [Coworking] [Foco]",
-    "categoria": "nomades",
-    "emoji": "🧠",
-    "dor_resolvida": "Escolher cafés e pontos de trabalho que sustentem concentração sem sacrificar qualidade da bebida.",
-    "descricao": "Critérios para selecionar ambientes com equilíbrio entre fluxo, conforto, café consistente e permanência produtiva.",
-    "url": "https://cafepraviagem.com/nomades/mapa-cafe-ideal-coworking"
+    "nome": "Gelo de café para bebida fria [Sem Diluição]",
+    "categoria": "Acessórios",
+    "emoji": "🧊",
+    "dor_resolvida": "Evita café aguado ao longo do deslocamento.",
+    "descricao": "Cubos feitos com o próprio café ajudam a manter a bebida fria sem diluir tanto o sabor em trajetos longos ou clima quente.",
+    "url": "https://en.wikipedia.org/wiki/Iced_coffee"
   },
   {
     "id": 21,
-    "nome": "Rotina de Café em Viagens de Trabalho [Executivo] [Nômade]",
-    "categoria": "nomades",
-    "emoji": "🧳",
-    "dor_resolvida": "Manter consistência entre hotéis, aeroportos, táxis e agendas variáveis.",
-    "descricao": "Guia de hábitos e atalhos para preservar uma rotina simples, funcional e replicável de café durante viagens profissionais.",
-    "url": "https://cafepraviagem.com/nomades/rotina-cafe-viagens-trabalho"
+    "nome": "Copo com tampa para beber andando [Conforto]",
+    "categoria": "Acessórios",
+    "emoji": "🥤",
+    "dor_resolvida": "Melhora conforto de consumo andando, dirigindo ou esperando transporte.",
+    "descricao": "Modelos com boa ergonomia de tampa e fluxo de saída equilibrado facilitam beber sem derramar nem esfriar rápido demais.",
+    "url": "https://www.gocontigo.com/"
   },
   {
     "id": 22,
-    "nome": "Café no Camping sem Estrutura Complexa [Camping] [Outdoor]",
-    "categoria": "camping",
-    "emoji": "🏕️",
-    "dor_resolvida": "Preparar café saboroso em acampamentos sem depender de equipamentos volumosos ou frágeis.",
-    "descricao": "Soluções de preparo simples para manhãs ao ar livre, com foco em leveza, limpeza e repetibilidade.",
-    "url": "https://cafepraviagem.com/outdoor/cafe-no-camping"
+    "nome": "Filtro de papel separado por dose [Sem Bagunça]",
+    "categoria": "Acessórios",
+    "emoji": "📄",
+    "dor_resolvida": "Agiliza montagem do setup portátil e reduz improviso fora da cozinha.",
+    "descricao": "Levar filtros já separados e protegidos em um estojo pequeno melhora velocidade e evita amassar material importante.",
+    "url": "https://www.hario.com/"
   },
   {
     "id": 23,
-    "nome": "AeroPress no Acampamento: o que muda [Camping] [Aeropress]",
-    "categoria": "camping",
-    "emoji": "🔥",
-    "dor_resolvida": "Entender como adaptar moagem, água e rotina de preparo quando o ambiente é mais rústico.",
-    "descricao": "Ajustes de operação para usar AeroPress em trilhas leves, camping e viagens com infraestrutura reduzida.",
-    "url": "https://cafepraviagem.com/outdoor/aeropress-acampamento"
+    "nome": "Checklist de saída com café [Hábito]",
+    "categoria": "Dicas",
+    "emoji": "✅",
+    "dor_resolvida": "Reduz esquecimentos de tampa, vedação, filtro, dose extra ou gelo.",
+    "descricao": "Criar uma sequência curta antes de sair ajuda a transformar o café pra viagem em hábito estável e menos improvisado.",
+    "url": "https://pt.wikipedia.org/wiki/H%C3%A1bito"
   },
   {
     "id": 24,
-    "nome": "Checklist de Café para Estrada e Natureza [Outdoor] [Checklist]",
-    "categoria": "camping",
-    "emoji": "🚐",
-    "dor_resolvida": "Evitar esquecer itens críticos e comprometer o preparo em viagens longas ou acampamentos.",
-    "descricao": "Lista enxuta dos componentes mais importantes para montar uma rotina de café portátil em contextos outdoor.",
-    "url": "https://cafepraviagem.com/outdoor/checklist-cafe-estrada-natureza"
+    "nome": "Pré-dose de grão em potes pequenos [Porções Prontas]",
+    "categoria": "Dicas",
+    "emoji": "🫘",
+    "dor_resolvida": "Economiza tempo e evita erro de dose fora de casa.",
+    "descricao": "Separar porções de grão antes da semana começar acelera o preparo e reduz sujeira em ambientes improvisados.",
+    "url": "https://en.wikipedia.org/wiki/Coffee_preparation"
   }
 ]
