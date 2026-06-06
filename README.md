@@ -1,150 +1,113 @@
-# Café com Bytes
+# Café Pra Viagem
 
-> Hub cyber futurista de curadoria de ferramentas online, projetado como um portal leve, transparente e focado em produtividade real.
+## Visão do produto
 
-## Visão geral
+O **Café Pra Viagem** nasceu para resolver uma fricção muito específica, mas extremamente comum: a distância entre quem valoriza café de verdade e a realidade improvisada de aeroportos, hotéis, deslocamentos longos e rotinas móveis.
 
-O Café com Bytes nasceu de uma constatação simples: a maior parte do tempo gasto na adoção de novas ferramentas não está no teste em si, mas na busca – abas demais, termos vagos demais, resultados genéricos demais.
+Como Product Manager, eu, **Paulin Basalces**, enxergo este projeto como um hub editorial de utilidade prática. Não é apenas um site sobre café. É uma camada de decisão para pessoas que vivem em movimento e não querem abrir mão de qualidade, autonomia e contexto.
 
-Este repositório abriga o código do portal `cafecombytes.com`, pensado como um agregador de links de ferramentas amplamente buscadas na internet, organizado por contexto de uso e não por jargão técnico.
+O domínio `cafepraviagem.com` foi concebido para operar como um portal de curadoria orgânica, com arquitetura serverless simples, carregamento rápido e conteúdo orientado por intenção real de busca.
 
-Como Product Manager, a minha narrativa aqui é menos sobre “features” e mais sobre decisões de produto: o que escolhemos **não** fazer é tão importante quanto o que entrou no MVP.
+## Problema que o projeto resolve
 
-## Objetivo do produto
+Existe um perfil crescente de usuário que combina:
+- rotina acelerada,
+- trabalho remoto ou híbrido,
+- deslocamentos frequentes,
+- e repertório maior de consumo em café.
 
-- Ser o primeiro lugar onde uma pessoa curiosa pode ir quando pensa:  
-  “Deve existir uma ferramenta pra isso…”
-- Priorizar **descoberta rápida** sobre profundidade infinita de catálogo.
-- Reduzir o atrito entre intenção e clique, com:
-  - busca local simples,
-  - filtros em Bento Grid por contexto,
-  - cards com linguagem clara de “dor que a ferramenta resolve”.
+Esse público sofre, em geral, com três dores centrais:
 
-Não queremos competir com buscadores ou diretórios gigantescos. Queremos ser um mapa opinativo e enxuto.
+1. **Café ruim em trânsito**  
+   A pessoa viaja e fica presa a opções genéricas, inconsistentes ou caras demais para a qualidade entregue.
 
-## Público-alvo
+2. **Falta de tempo para decidir**  
+   Entre um voo, uma reunião, uma conexão ou uma caminhada urbana, não há espaço para pesquisar profundamente.
 
-1. Criadores de conteúdo (texto, imagem, vídeo, áudio) que vivem testando ferramentas novas.
-2. Pessoas em transição de carreira ou estudo, que precisam aumentar produtividade sem um stack complexo.
-3. Generalistas digitais que fazem “de tudo um pouco” e querem atalhos confiáveis.
+3. **Dúvida sobre o que levar**  
+   Muitos querem preparar o próprio café em trânsito, mas não sabem quais itens realmente valem o espaço e o peso na mala.
 
-Persona base: alguém que abre 10 abas por curiosidade, mas só tem 20 minutos entre uma tarefa e outra para testar algo novo.
+## Proposta editorial
 
-## Decisões de produto
+O portal organiza a experiência em três frentes principais:
 
-### 1. Arquitetura estática e serverless
+- **Guias de cafeterias** em aeroportos, cidades e rotas úteis.
+- **Reviews e comparativos de gear portátil**, com foco em leveza, eficiência e adequação ao uso real.
+- **Conteúdo prático de logística**, preparo e rotina, pensado para quem vive entre deslocamentos.
 
-Optamos por uma arquitetura puramente estática (HTML, CSS, JS, JSON):
+A proposta não é parecer enciclopédica. A proposta é ser útil, objetiva e acionável.
 
-- Deploy simples em qualquer CDN.
-- Custos previsíveis e baixos.
-- Extremamente rápido para o usuário final.
-- Menos superfície de ataque (sem backend customizado).
+## Arquitetura do projeto
 
-Toda a curadoria vive em arquivos JSON (`dados.json`, `parceiros.json`, `tags.json`), consumidos via `fetch` e renderizados no cliente.
+O site foi estruturado em modelo estático com:
+- `index.html`
+- `style.css`
+- `script.js`
+- `dados.json`
+- `parceiros.json`
+- `tags.json`
+- `sobre.html`
+- `privacidade.html`
+- `robots.txt`
+- `sitemap.xml`
 
-### 2. Curadoria em vez de catálogo exaustivo
+### Princípios da arquitetura
+- Front-end serverless
+- HTML, CSS, JS e JSON puros
+- Busca local no navegador
+- Curadoria dinâmica carregada por `fetch`
+- Interface com glassmorphism moderno
+- Alternância de tema light/dark
+- Estrutura orientada para SEO técnico e on-page
 
-O portal lista um conjunto **selecionado** de ferramentas, não um índice completo da internet. Isso libera o time para:
+## Estratégia de experiência
 
-- dizer explicitamente “isso aqui é bom o suficiente para testar hoje”;
-- remover sem dó o que envelheceu mal;
-- aceitar que não vamos cobrir todos os nichos.
+A UX foi desenhada para leitura rápida e uso intenso em mobile.
 
-O botão “Buscar no Google” é o escape hatch honesto: se a curadoria não resolveu, abrimos o caminho de volta para a web ampla, sem aprisionar o usuário.
+### Decisões centrais
+- Hero com proposta clara e busca imediata
+- Bento menu para exploração por intenção
+- Cards com leitura escaneável
+- Tags extraídas automaticamente dos títulos
+- Modais com History API para manter contexto
+- Web Share API para distribuição rápida de conteúdo
+- Rodapé semântico com ecossistema de parceiros
 
-### 3. Experiência visual: cyber café futurista
+## Estratégia de crescimento
 
-A estética mistura:
+O crescimento do projeto depende de três motores complementares:
 
-- **Glassmorphism** (painéis translúcidos com `backdrop-filter`) para dar a sensação de HUD de ficção científica;
-- paleta **neon em fundo escuro** (ciano, magenta, roxo) cuidadosamente evitendo preto e branco puros para manter conforto visual;
-- tipografia com cara de interface: Orbitron para títulos (HUD / display) e Space Grotesk para corpo (legibilidade em blocos densos).
+### 1. SEO de intenção
+Criar páginas que respondam perguntas e decisões como:
+- onde tomar café bom no aeroporto,
+- qual moedor levar na mala,
+- como fazer café no hotel,
+- qual kit portátil vale a pena.
 
-A ideia é passar a sensação de “terminal de bordo” acessível, não de painel corporativo sisudo.
+### 2. Curadoria como ativo
+Em vez de produzir apenas volume textual, o projeto constrói confiança por meio de seleção útil e contexto de uso.
 
-### 4. Navegação por contexto (Bento Grid)
+### 3. Rede de portais
+O portal se fortalece dentro de um ecossistema com projetos complementares, ampliando distribuição, autoridade temática e possibilidades futuras de monetização.
 
-O menu de filtros usa um layout estilo Bento Grid:
+## Transparência e monetização
 
-- blocos maiores para modos de descoberta (“Tudo ao mesmo tempo”);
-- blocos médios para grandes áreas de uso (escrita, imagem, vídeo, áudio, produtividade, estudos);
-- microdescritivos orientados à dor, não ao tipo de arquivo.
+O projeto pode monetizar por:
+- Google Ads,
+- afiliados,
+- publieditoriais sinalizados,
+- páginas transacionais com foco comparativo.
 
-Isso deixa claro **por que** alguém clicaria em uma categoria, não apenas o nome técnico dela.
+Ainda assim, a coerência editorial precisa permanecer intacta. O usuário não pode ser enganado sobre o que é conteúdo informativo, o que é curadoria comercial e o que é recomendação patrocinada.
 
-### 5. Cartões explicando “dor resolvida”
+## O que torna este portal forte
 
-Cada ferramenta é descrita em três camadas:
+O diferencial do **Café Pra Viagem** não é falar de café de forma genérica. É interpretar café como infraestrutura emocional e funcional para pessoas em movimento.
 
-1. **Nome com tags em colchetes**  
-   Ex.: `Photopea [Gratuito] [Sem Login]`
-2. **“dor_resolvida”** – uma frase curta que responde “pra que eu usaria isso hoje?”
-3. **Descrição** – um resumo neutro, mas opinativo, sobre o encaixe da ferramenta no dia a dia.
+Quando isso é bem executado, o portal deixa de ser apenas conteúdo e vira referência de decisão.
 
-As tags entre colchetes são extraídas via regex no frontend e exibidas como badges, com cores configuráveis em `tags.json`.
+## Assinatura do projeto
 
-### 6. Transparência editorial
-
-O site inclui:
-
-- `sobre.html`: explica critérios de seleção, atualização e independência editorial.
-- `privacidade.html`: deixa claro que não há coleta ativa de dados pessoais pelo portal em si e que serviços de terceiros (como Google Ads) têm políticas próprias.
-
-A intenção é que qualquer pessoa lendo duas páginas saiba exatamente:
-- o que o portal faz,
-- o que não faz,
-- e quem mais pode estar processando dados durante a navegação.
-
-## Decisões técnicas
-
-### Frontend
-
-- HTML semântico (header, main, section, article, footer).
-- CSS com:
-  - design system simples (tipografia fluida, escala de espaçamento em 4px, tema light/dark via `data-theme`);
-  - Glassmorphism com bordas suaves, sombras em camadas e transparências calibradas;
-  - responsividade mobile‑first (grade colapsa para uma coluna, filtros em pilha vertical, cards fluidos).
-- JavaScript vanilla:
-  - `Promise.all` para carregar `dados.json`, `parceiros.json`, `tags.json`;
-  - busca local em memória (sem roundtrip para servidor);
-  - filtro por categoria (Bento Grid);
-  - modal de detalhes de ferramenta, controlado via History API e parâmetro `?modal=`;
-  - Web Share API / fallback de cópia de link para compartilhamento rápido.
-
-### SEO e rastreio responsável
-
-- `robots.txt`:
-  - bloqueia especificamente URLs com `?q=` (busca interna) e `?modal=` (estado de UI), evitando que esses parâmetros criem ruído em mecanismos de busca;
-  - referencia `sitemap.xml` na raiz.
-- `sitemap.xml`:
-  - lista `index`, `sobre` e `privacidade` com `lastmod` e prioridades básicas.
-
-Não se pretende competir por todas as palavras-chave de ferramentas, mas garantir que os pilares editoriais sejam facilmente descobertos.
-
-## Roadmap (alto nível)
-
-- **Curto prazo**
-  - Mais categorias contextuais (por exemplo, “freelancers”, “marketing local”, “estudo para concursos”).
-  - Marcação de ferramentas instáveis (“beta”, “experimental”) de forma mais evidente no UI.
-- **Médio prazo**
-  - Versões temáticas do portal (ex.: foco apenas em estudos, apenas em criadores de conteúdo).
-  - Integrações mais profundas com portais parceiros da rede.
-- **Longo prazo**
-  - Mecanismos de feedback leve (voto “funcionou / não funcionou” sem login).
-  - Curadorias sazonais (ex.: “stack mínimo para começar um side project em 7 dias”).
-
-## Como contribuir
-
-Mesmo que este projeto tenha nascido como uma curadoria editorial, o código é intencionalmente simples para facilitar ajustes:
-
-- ajustes de texto podem ser feitos diretamente em `dados.json`, `sobre.html` e `privacidade.html`;
-- mudanças visuais podem ser concentradas em `style.css`;
-- novas interações ou filtros podem ser implementados em `script.js`.
-
-Pull requests que melhorem a clareza da experiência, a acessibilidade ou a transparência editorial são especialmente bem‑vindos.
-
----
-
-_Por: Paulin Basalces, Product Manager_  
-“Se a pessoa entendeu em 30 segundos o que o portal faz, o design de produto está no caminho certo.”
+**Paulin Basalces**  
+Product Manager  
+Responsável pela visão de produto, coerência editorial e direção estratégica do portal
