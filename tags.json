@@ -1,74 +1,152 @@
 {
-  "Gratuito": {
-    "textColor": "#e2ffe9",
-    "backgroundColor": "rgba(9, 48, 23, 0.96)",
-    "borderColor": "rgba(111, 255, 163, 0.8)",
-    "className": "tag-pill--free"
+  "Rápido": {
+    "cor_texto": "#8F4A22",
+    "fundo": "rgba(217, 119, 70, 0.14)",
+    "borda": "rgba(217, 119, 70, 0.28)"
   },
-  "Free": {
-    "textColor": "#e2ffe9",
-    "backgroundColor": "rgba(9, 48, 23, 0.96)",
-    "borderColor": "rgba(111, 255, 163, 0.8)",
-    "className": "tag-pill--free"
+  "Aeroporto": {
+    "cor_texto": "#6A4C3E",
+    "fundo": "rgba(160, 125, 104, 0.16)",
+    "borda": "rgba(160, 125, 104, 0.32)"
   },
-  "Free Tier": {
-    "textColor": "#e2ffe9",
-    "backgroundColor": "rgba(10, 40, 30, 0.96)",
-    "borderColor": "rgba(111, 255, 163, 0.8)",
-    "className": "tag-pill--free"
+  "Cidade": {
+    "cor_texto": "#6B5750",
+    "fundo": "rgba(140, 116, 103, 0.14)",
+    "borda": "rgba(140, 116, 103, 0.3)"
   },
-  "Sem Login": {
-    "textColor": "#e2f4ff",
-    "backgroundColor": "rgba(8, 26, 61, 0.98)",
-    "borderColor": "rgba(128, 198, 255, 0.86)",
-    "className": "tag-pill--no-login"
+  "Executivo": {
+    "cor_texto": "#78563C",
+    "fundo": "rgba(191, 138, 97, 0.14)",
+    "borda": "rgba(191, 138, 97, 0.28)"
   },
-  "Sem Cadastro": {
-    "textColor": "#e2f4ff",
-    "backgroundColor": "rgba(8, 26, 61, 0.98)",
-    "borderColor": "rgba(128, 198, 255, 0.86)",
-    "className": "tag-pill--no-login"
+  "Curadoria": {
+    "cor_texto": "#5F4336",
+    "fundo": "rgba(118, 88, 72, 0.14)",
+    "borda": "rgba(118, 88, 72, 0.3)"
   },
-  "Sem Marca d’Água": {
-    "textColor": "#ffe6f3",
-    "backgroundColor": "rgba(88, 17, 53, 0.98)",
-    "borderColor": "rgba(255, 131, 179, 0.88)",
-    "className": "tag-pill--alerta"
+  "Nômade": {
+    "cor_texto": "#5F5A78",
+    "fundo": "rgba(133, 99, 130, 0.14)",
+    "borda": "rgba(133, 99, 130, 0.28)"
   },
-  "Sem Marca d'Água": {
-    "textColor": "#ffe6f3",
-    "backgroundColor": "rgba(88, 17, 53, 0.98)",
-    "borderColor": "rgba(255, 131, 179, 0.88)",
-    "className": "tag-pill--alerta"
+  "Mochilão": {
+    "cor_texto": "#6D5D3F",
+    "fundo": "rgba(179, 141, 69, 0.14)",
+    "borda": "rgba(179, 141, 69, 0.28)"
   },
-  "IA Generativa": {
-    "textColor": "#f3e9ff",
-    "backgroundColor": "rgba(41, 14, 82, 0.98)",
-    "borderColor": "rgba(190, 140, 255, 0.9)",
-    "className": "tag-pill--ia"
+  "Econômico": {
+    "cor_texto": "#765D2D",
+    "fundo": "rgba(184, 144, 57, 0.14)",
+    "borda": "rgba(184, 144, 57, 0.28)"
   },
-  "Português": {
-    "textColor": "#f2f4ff",
-    "backgroundColor": "rgba(16, 32, 88, 0.96)",
-    "borderColor": "rgba(146, 176, 255, 0.85)",
-    "className": "tag-pill--lang"
+  "Coworking": {
+    "cor_texto": "#4E6578",
+    "fundo": "rgba(88, 119, 146, 0.14)",
+    "borda": "rgba(88, 119, 146, 0.28)"
   },
-  "Beta": {
-    "textColor": "#fff0de",
-    "backgroundColor": "rgba(86, 43, 5, 0.96)",
-    "borderColor": "rgba(255, 181, 107, 0.9)",
-    "className": "tag-pill--beta"
+  "Portátil": {
+    "cor_texto": "#6C4B3F",
+    "fundo": "rgba(217, 119, 70, 0.12)",
+    "borda": "rgba(217, 119, 70, 0.24)"
   },
-  "[Curadoria]": {
-    "textColor": "#e8ebff",
-    "backgroundColor": "rgba(19, 23, 72, 0.96)",
-    "borderColor": "rgba(142, 163, 255, 0.86)",
-    "className": "tag-pill--curadoria"
+  "Leve": {
+    "cor_texto": "#5B6D46",
+    "fundo": "rgba(93, 122, 67, 0.14)",
+    "borda": "rgba(93, 122, 67, 0.28)"
   },
-  "*": {
-    "textColor": "#cfd4ff",
-    "backgroundColor": "rgba(5, 10, 33, 0.96)",
-    "borderColor": "rgba(118, 138, 223, 0.8)",
-    "className": "tag-pill"
+  "Moedor": {
+    "cor_texto": "#5E4A43",
+    "fundo": "rgba(132, 107, 98, 0.14)",
+    "borda": "rgba(132, 107, 98, 0.28)"
+  },
+  "Essencial": {
+    "cor_texto": "#704E38",
+    "fundo": "rgba(207, 122, 52, 0.14)",
+    "borda": "rgba(207, 122, 52, 0.28)"
+  },
+  "Térmico": {
+    "cor_texto": "#7A4E44",
+    "fundo": "rgba(181, 103, 75, 0.14)",
+    "borda": "rgba(181, 103, 75, 0.28)"
+  },
+  "Minimalista": {
+    "cor_texto": "#5F4336",
+    "fundo": "rgba(118, 88, 72, 0.12)",
+    "borda": "rgba(118, 88, 72, 0.26)"
+  },
+  "Setup": {
+    "cor_texto": "#6A4F47",
+    "fundo": "rgba(154, 126, 115, 0.14)",
+    "borda": "rgba(154, 126, 115, 0.28)"
+  },
+  "Precisão": {
+    "cor_texto": "#4C6371",
+    "fundo": "rgba(88, 119, 146, 0.12)",
+    "borda": "rgba(88, 119, 146, 0.26)"
+  },
+  "Acessórios": {
+    "cor_texto": "#68554D",
+    "fundo": "rgba(141, 113, 101, 0.12)",
+    "borda": "rgba(141, 113, 101, 0.26)"
+  },
+  "Organização": {
+    "cor_texto": "#5D6546",
+    "fundo": "rgba(109, 130, 82, 0.14)",
+    "borda": "rgba(109, 130, 82, 0.28)"
+  },
+  "Logística": {
+    "cor_texto": "#6B5750",
+    "fundo": "rgba(140, 116, 103, 0.12)",
+    "borda": "rgba(140, 116, 103, 0.26)"
+  },
+  "Checklist": {
+    "cor_texto": "#7D5C34",
+    "fundo": "rgba(179, 141, 69, 0.14)",
+    "borda": "rgba(179, 141, 69, 0.28)"
+  },
+  "Hotel": {
+    "cor_texto": "#755E55",
+    "fundo": "rgba(149, 121, 109, 0.14)",
+    "borda": "rgba(149, 121, 109, 0.28)"
+  },
+  "Prático": {
+    "cor_texto": "#8B532F",
+    "fundo": "rgba(217, 119, 70, 0.16)",
+    "borda": "rgba(217, 119, 70, 0.3)"
+  },
+  "Tempo": {
+    "cor_texto": "#6B4C33",
+    "fundo": "rgba(191, 138, 97, 0.14)",
+    "borda": "rgba(191, 138, 97, 0.28)"
+  },
+  "Compra": {
+    "cor_texto": "#6F5635",
+    "fundo": "rgba(184, 144, 57, 0.12)",
+    "borda": "rgba(184, 144, 57, 0.26)"
+  },
+  "Planejamento": {
+    "cor_texto": "#5E4C44",
+    "fundo": "rgba(132, 107, 98, 0.12)",
+    "borda": "rgba(132, 107, 98, 0.26)"
+  },
+  "Foco": {
+    "cor_texto": "#55624A",
+    "fundo": "rgba(93, 122, 67, 0.14)",
+    "borda": "rgba(93, 122, 67, 0.28)"
+  },
+  "Camping": {
+    "cor_texto": "#5D6546",
+    "fundo": "rgba(109, 130, 82, 0.14)",
+    "borda": "rgba(109, 130, 82, 0.28)"
+  },
+  "Outdoor": {
+    "cor_texto": "#5B6947",
+    "fundo": "rgba(111, 137, 88, 0.14)",
+    "borda": "rgba(111, 137, 88, 0.28)"
+  },
+  "Aeropress": {
+    "cor_texto": "#864B33",
+    "fundo": "rgba(207, 122, 52, 0.14)",
+    "borda": "rgba(207, 122, 52, 0.28)"
   }
 }
