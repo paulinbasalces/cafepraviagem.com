@@ -1,158 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre | Café Pra Viagem</title>
-  <meta name="description" content="Conheça a metodologia editorial do Café Pra Viagem, os critérios de curadoria e os princípios de transparência do portal.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://cafepraviagem.com/sobre.html">
+  <meta name="description" content="Conheça a metodologia editorial do Café Pra Viagem, um portal curatorial sobre receitas, equipamentos, cafeterias e grãos para quem vive em movimento." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cafepraviagem.com/sobre.html" />
 
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Café Pra Viagem">
-  <meta property="og:title" content="Sobre o Café Pra Viagem">
-  <meta property="og:description" content="Metodologia, princípios editoriais e critérios de curadoria do portal.">
-  <meta property="og:url" content="https://cafepraviagem.com/sobre.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Sobre | Café Pra Viagem" />
+  <meta property="og:description" content="Entenda como selecionamos receitas, cafeterias, grãos e equipamentos para café pra viagem." />
+  <meta property="og:url" content="https://cafepraviagem.com/sobre.html" />
+  <meta property="og:site_name" content="Café Pra Viagem" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sobre o Café Pra Viagem">
-  <meta name="twitter:description" content="Entenda como funciona a curadoria editorial do portal.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
-  <script defer src="./script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
 
-  <div class="site-shell">
-    <header class="topbar glass-panel">
-      <div class="brand-block">
-        <a class="brand-link" href="./index.html" aria-label="Ir para a página inicial do Café Pra Viagem">
-          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" fill="none">
-            <rect x="8" y="10" width="38" height="30" rx="10" stroke="currentColor" stroke-width="3.5"></rect>
-            <path d="M46 18h6c4.418 0 8 3.582 8 8s-3.582 8-8 8h-6" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"></path>
-            <path d="M18 6c4 4 4 8 0 12M30 4c4 4 4 8 0 12" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
-            <path d="M14 47c11 6 25 6 36 0" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"></path>
+  <header class="cabecalho-site">
+    <div class="container">
+      <div class="nav-bar glass-effect">
+        <a href="./index.html" class="logotipo" aria-label="Ir para a página inicial do Café Pra Viagem">
+          <svg class="brand-mark" viewBox="0 0 160 42" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 28c0 6 5 10 12 10s12-4 12-10V15H18v13Z"></path>
+              <path d="M42 18h8c5 0 9 4 9 9s-4 9-9 9h-8"></path>
+              <path d="M22 10c2-2 2-4 0-6"></path>
+              <path d="M30 10c2-2 2-4 0-6"></path>
+              <path d="M38 10c2-2 2-4 0-6"></path>
+              <path d="M78 32c8-1 13-6 17-13 6-10 14-15 29-15"></path>
+              <path d="M117 8l8-4-2 8"></path>
+            </g>
           </svg>
-          <span class="brand-text">
-            <strong>Café Pra Viagem</strong>
-            <small>Transparência editorial</small>
-          </span>
+          <span>Café<span class="marca-destaque">Pra</span>Viagem</span>
         </a>
+
+        <div class="controles-a11y" aria-label="Controles de acessibilidade e tema">
+          <button id="btn-fonte-menos" class="btn-a11y glass-btn" type="button" aria-label="Diminuir fonte">A-</button>
+          <button id="btn-fonte-mais" class="btn-a11y glass-btn" type="button" aria-label="Aumentar fonte">A+</button>
+          <button id="btn-tema" class="btn-a11y glass-btn" type="button" aria-label="Alternar tema" data-theme-toggle>◐</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" class="container" style="padding-block: 7rem 4rem;">
+    <section class="glass-effect" style="padding: 2rem; border-radius: 1.4rem;">
+      <p class="section-kicker">Metodologia editorial</p>
+      <h1 class="hero-title" style="font-size: clamp(2rem, 1.4rem + 2vw, 3.5rem); max-width: 18ch;">Como o Café Pra Viagem escolhe o que entra no portal</h1>
+      <p class="hero-subtitle" style="margin-bottom: 1.5rem;">
+        O Café Pra Viagem foi criado para organizar decisões melhores sobre café quando o contexto não é a mesa posta, e sim a saída cedo, o deslocamento, a mochila, o carro, a fila rápida e a necessidade de beber bem em movimento.
+      </p>
+
+      <div class="editorial-stack">
+        <article class="mini-card glass-effect">
+          <strong>1. Foco em fricção real</strong>
+          <span>Selecionamos receitas, acessórios, cafeterias e equipamentos que resolvem problemas concretos: café morno, vazamento, dificuldade de preparo, falta de praticidade, filas ruins e escolhas apressadas.</span>
+        </article>
+
+        <article class="mini-card glass-effect">
+          <strong>2. Portabilidade acima do exibicionismo</strong>
+          <span>Itens bonitos que não funcionam fora da bancada não são prioridade. O recorte do portal privilegia uso real para pessoas em trânsito, trabalho híbrido, viagem e rotina corrida.</span>
+        </article>
+
+        <article class="mini-card glass-effect">
+          <strong>3. Transparência sobre limites</strong>
+          <span>Quando uma solução exige preparo antecipado, mais cuidado com limpeza, maior volume na mochila ou atenção extra com temperatura, isso deve ser dito com clareza.</span>
+        </article>
+
+        <article class="mini-card glass-effect">
+          <strong>4. Curadoria orientada por contexto</strong>
+          <span>Nem todo grão, método ou cafeteria serve para todo momento. A proposta é ajudar o usuário a escolher melhor conforme tempo, deslocamento, equipamento disponível e perfil de consumo.</span>
+        </article>
       </div>
 
-      <nav class="topnav" aria-label="Navegação secundária">
-        <a href="./index.html">Início</a>
-        <a href="./privacidade.html">Privacidade</a>
-      </nav>
-
-      <div class="toolbar">
-        <button class="icon-button" type="button" data-font-toggle aria-label="Alternar tipografia">
-          <span aria-hidden="true">Aa</span>
-        </button>
-        <button class="icon-button" type="button" data-theme-toggle aria-label="Alternar tema">
-          <span aria-hidden="true">☼</span>
-        </button>
+      <div class="glass-effect" style="margin-top: 1.5rem; padding: 1.5rem; border-radius: 1.2rem;">
+        <h2 style="font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: 0.75rem;">Compromisso editorial</h2>
+        <p style="color: var(--color-text-muted);">
+          O portal possui caráter curatorial e informativo. Não prometemos “o melhor café do mundo”, e sim uma estrutura prática para encontrar referências mais úteis, mais claras e mais adequadas à rotina de quem precisa sair com café.
+        </p>
       </div>
-    </header>
+    </section>
+  </main>
 
-    <main id="conteudo">
-      <section class="hero">
-        <div class="hero-copy glass-panel">
-          <p class="eyebrow">Metodologia</p>
-          <h1>Como o Café Pra Viagem faz curadoria.</h1>
-          <p class="hero-description">
-            O portal foi criado para ajudar pessoas em trânsito a encontrar café melhor, setups mais inteligentes e atalhos práticos para diferentes contextos de mobilidade.
-          </p>
-        </div>
+  <footer class="rodape-site">
+    <div class="container">
+      <div class="rodape-bottom">
+        <p>© 2026 Café Pra Viagem.</p>
+        <nav class="links-rodape" aria-label="Links institucionais">
+          <a href="index.html">Início</a>
+          <a href="privacidade.html">Privacidade</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 
-        <aside class="hero-aside glass-panel">
-          <p class="eyebrow">Princípios</p>
-          <div class="mini-stack">
-            <article class="mini-card">
-              <h2>Utilidade antes de volume</h2>
-              <p>Publicamos conteúdos orientados por decisão real, não apenas por tráfego.</p>
-            </article>
-            <article class="mini-card">
-              <h2>Clareza editorial</h2>
-              <p>Separação entre conteúdo informativo, comparativos, opinião e páginas comerciais.</p>
-            </article>
-            <article class="mini-card">
-              <h2>Contexto de uso</h2>
-              <p>Todo item é analisado dentro do cenário de viagem, deslocamento ou rotina móvel.</p>
-            </article>
-          </div>
-        </aside>
-      </section>
+  <script>
+    (function(){
+      const html=document.documentElement;
+      const temaBtn=document.getElementById('btn-tema');
+      const mais=document.getElementById('btn-fonte-mais');
+      const menos=document.getElementById('btn-fonte-menos');
+      let storageOK=true;
+      try{localStorage.setItem('_t','1');localStorage.removeItem('_t');}catch(e){storageOK=false;}
+      const get=(k)=>storageOK?localStorage.getItem(k):null;
+      const set=(k,v)=>{if(storageOK)localStorage.setItem(k,v);};
 
-      <section class="content-section">
-        <div class="section-heading">
-          <p class="eyebrow">Critérios de avaliação</p>
-          <h2>O que guia a seleção de links, equipamentos e destinos.</h2>
-        </div>
+      let tema=get('tema') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      html.setAttribute('data-theme', tema);
 
-        <div class="collections-grid">
-          <article class="collection-card glass-panel">
-            <span>01</span>
-            <h3>Qualidade percebida</h3>
-            <p>Analisamos reputação, coerência do serviço, proposta do local ou utilidade prática do equipamento no contexto de uso.</p>
-          </article>
-          <article class="collection-card glass-panel">
-            <span>02</span>
-            <h3>Portabilidade e tempo</h3>
-            <p>Itens e recomendações precisam fazer sentido para quem tem pressa, pouco espaço ou precisa decidir rápido.</p>
-          </article>
-          <article class="collection-card glass-panel">
-            <span>03</span>
-            <h3>Leitura acionável</h3>
-            <p>O objetivo é transformar pesquisa dispersa em orientação clara, objetiva e utilizável imediatamente.</p>
-          </article>
-        </div>
-      </section>
+      let fontScale=parseInt(get('fontScale') || '100',10);
+      html.style.fontSize=fontScale + '%';
 
-      <section class="newsletter-section glass-panel">
-        <div>
-          <p class="eyebrow">Transparência</p>
-          <h2>Como tratamos monetização e indicações.</h2>
-          <p class="section-support">
-            Algumas páginas podem conter links de parceiros, recomendações comerciais ou páginas com intenção publicitária. Quando isso acontecer, a sinalização deve ser clara, próxima ao contexto e sem mascarar conteúdo patrocinado como se fosse análise independente.
-          </p>
-        </div>
-      </section>
+      temaBtn.addEventListener('click',()=>{
+        tema=tema==='dark'?'light':'dark';
+        html.setAttribute('data-theme',tema);
+        set('tema',tema);
+      });
 
-      <section class="content-section">
-        <div class="section-heading">
-          <p class="eyebrow">Compromissos editoriais</p>
-          <h2>O que você pode esperar do portal.</h2>
-        </div>
+      mais.addEventListener('click',()=>{
+        if(fontScale<130){fontScale+=10;html.style.fontSize=fontScale+'%';set('fontScale',fontScale);}
+      });
 
-        <div class="cards-grid">
-          <article class="card">
-            <div>
-              <h3 class="card-title">Independência de estrutura</h3>
-              <p class="card-description">Nenhum parceiro pode exigir remoção de pontos críticos apenas por interesse comercial.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div>
-              <h3 class="card-title">Atualização progressiva</h3>
-              <p class="card-description">Guias e comparativos podem ser revisados conforme surgem novas opções, mudanças de operação ou novas necessidades de viagem.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div>
-              <h3 class="card-title">Contexto acima de hype</h3>
-              <p class="card-description">Um item excelente em casa pode falhar em trânsito; aqui o critério central é adequação ao cenário real.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-  </div>
+      menos.addEventListener('click',()=>{
+        if(fontScale>90){fontScale-=10;html.style.fontSize=fontScale+'%';set('fontScale',fontScale);}
+      });
+    })();
+  </script>
 </body>
 </html>
