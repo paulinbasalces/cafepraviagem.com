@@ -1,148 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacidade | Café Pra Viagem</title>
-  <meta name="description" content="Política de privacidade do Café Pra Viagem com declaração de não coleta sensível de dados e uso local de preferências de interface.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://cafepraviagem.com/privacidade.html">
+  <meta name="description" content="Política de privacidade do Café Pra Viagem sobre navegação, uso local de preferências e links externos." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cafepraviagem.com/privacidade.html" />
 
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Café Pra Viagem">
-  <meta property="og:title" content="Privacidade | Café Pra Viagem">
-  <meta property="og:description" content="Saiba como o portal trata preferências locais, navegação e transparência sobre dados.">
-  <meta property="og:url" content="https://cafepraviagem.com/privacidade.html">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Privacidade | Café Pra Viagem" />
+  <meta property="og:description" content="Saiba como o portal lida com preferências locais, links externos e navegação editorial." />
+  <meta property="og:url" content="https://cafepraviagem.com/privacidade.html" />
+  <meta property="og:site_name" content="Café Pra Viagem" />
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Privacidade | Café Pra Viagem">
-  <meta name="twitter:description" content="Política de privacidade e uso local de preferências do portal.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
-  <script defer src="./script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
 
-  <div class="site-shell">
-    <header class="topbar glass-panel">
-      <div class="brand-block">
-        <a class="brand-link" href="./index.html" aria-label="Ir para a página inicial do Café Pra Viagem">
-          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" fill="none">
-            <rect x="8" y="10" width="38" height="30" rx="10" stroke="currentColor" stroke-width="3.5"></rect>
-            <path d="M46 18h6c4.418 0 8 3.582 8 8s-3.582 8-8 8h-6" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"></path>
-            <path d="M18 6c4 4 4 8 0 12M30 4c4 4 4 8 0 12" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
-            <path d="M14 47c11 6 25 6 36 0" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"></path>
+  <header class="cabecalho-site">
+    <div class="container">
+      <div class="nav-bar glass-effect">
+        <a href="./index.html" class="logotipo" aria-label="Ir para a página inicial do Café Pra Viagem">
+          <svg class="brand-mark" viewBox="0 0 160 42" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 28c0 6 5 10 12 10s12-4 12-10V15H18v13Z"></path>
+              <path d="M42 18h8c5 0 9 4 9 9s-4 9-9 9h-8"></path>
+              <path d="M22 10c2-2 2-4 0-6"></path>
+              <path d="M30 10c2-2 2-4 0-6"></path>
+              <path d="M38 10c2-2 2-4 0-6"></path>
+              <path d="M78 32c8-1 13-6 17-13 6-10 14-15 29-15"></path>
+              <path d="M117 8l8-4-2 8"></path>
+            </g>
           </svg>
-          <span class="brand-text">
-            <strong>Café Pra Viagem</strong>
-            <small>Política de privacidade</small>
-          </span>
+          <span>Café<span class="marca-destaque">Pra</span>Viagem</span>
         </a>
+
+        <div class="controles-a11y" aria-label="Controles de acessibilidade e tema">
+          <button id="btn-fonte-menos" class="btn-a11y glass-btn" type="button" aria-label="Diminuir fonte">A-</button>
+          <button id="btn-fonte-mais" class="btn-a11y glass-btn" type="button" aria-label="Aumentar fonte">A+</button>
+          <button id="btn-tema" class="btn-a11y glass-btn" type="button" aria-label="Alternar tema" data-theme-toggle>◐</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" class="container" style="padding-block: 7rem 4rem;">
+    <section class="glass-effect" style="padding: 2rem; border-radius: 1.4rem;">
+      <p class="section-kicker">Privacidade e experiência local</p>
+      <h1 class="hero-title" style="font-size: clamp(2rem, 1.4rem + 2vw, 3.5rem); max-width: 18ch;">Como o portal trata sua navegação</h1>
+      <p class="hero-subtitle" style="margin-bottom: 1.5rem;">
+        O Café Pra Viagem foi concebido como um portal estático, leve e editorial. A experiência principal não depende de conta, cadastro ou perfil individual para funcionar.
+      </p>
+
+      <div class="editorial-stack">
+        <article class="mini-card glass-effect">
+          <strong>1. Coleta direta de dados</strong>
+          <span>Não exigimos criação de conta, envio de documentos ou preenchimento de formulários pessoais para usar a busca, navegar na curadoria e abrir os links editoriais do portal.</span>
+        </article>
+
+        <article class="mini-card glass-effect">
+          <strong>2. Armazenamento local de preferências</strong>
+          <span>O portal pode usar armazenamento local do navegador apenas para lembrar tema visual e tamanho da fonte, melhorando legibilidade e conforto na próxima visita.</span>
+        </article>
+
+        <article class="mini-card glass-effect">
+          <strong>3. Links externos</strong>
+          <span>Ao clicar em cafeterias, marcas, lojas, artigos ou serviços externos, você passa a interagir com ambientes de terceiros, sujeitos às políticas e práticas desses próprios sites.</span>
+        </article>
+
+        <article class="mini-card glass-effect">
+          <strong>4. Medição agregada</strong>
+          <span>Ferramentas de medição podem ser utilizadas para entender desempenho do portal, volume de tráfego e estabilidade técnica, sem transformar a navegação editorial em vigilância personalizada.</span>
+        </article>
       </div>
 
-      <nav class="topnav" aria-label="Navegação secundária">
-        <a href="./index.html">Início</a>
-        <a href="./sobre.html">Sobre</a>
-      </nav>
-
-      <div class="toolbar">
-        <button class="icon-button" type="button" data-font-toggle aria-label="Alternar tipografia">
-          <span aria-hidden="true">Aa</span>
-        </button>
-        <button class="icon-button" type="button" data-theme-toggle aria-label="Alternar tema">
-          <span aria-hidden="true">☼</span>
-        </button>
+      <div class="glass-effect" style="margin-top: 1.5rem; padding: 1.5rem; border-radius: 1.2rem;">
+        <h2 style="font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: 0.75rem;">Sobre a busca local</h2>
+        <p style="color: var(--color-text-muted);">
+          A pesquisa interna do portal serve para facilitar o encontro entre conteúdo editorial e intenção do usuário. Ela foi desenhada para funcionar de forma simples, direta e sem complexidade desnecessária.
+        </p>
       </div>
-    </header>
+    </section>
+  </main>
 
-    <main id="conteudo">
-      <section class="hero">
-        <div class="hero-copy glass-panel">
-          <p class="eyebrow">Privacidade</p>
-          <h1>Uma política simples, clara e proporcional ao portal.</h1>
-          <p class="hero-description">
-            O Café Pra Viagem foi pensado como um hub de curadoria estático, leve e com mínima dependência de dados pessoais.
-          </p>
-        </div>
+  <footer class="rodape-site">
+    <div class="container">
+      <div class="rodape-bottom">
+        <p>© 2026 Café Pra Viagem.</p>
+        <nav class="links-rodape" aria-label="Links institucionais">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 
-        <aside class="hero-aside glass-panel">
-          <p class="eyebrow">Resumo objetivo</p>
-          <div class="mini-stack">
-            <article class="mini-card">
-              <h2>Sem cadastro obrigatório</h2>
-              <p>O acesso ao conteúdo principal não depende de criação de conta.</p>
-            </article>
-            <article class="mini-card">
-              <h2>Sem coleta sensível própria</h2>
-              <p>O portal não foi desenhado para armazenar dados pessoais sensíveis do visitante.</p>
-            </article>
-            <article class="mini-card">
-              <h2>Preferências locais</h2>
-              <p>Podem ser utilizados recursos locais do navegador apenas para experiência, como tema e interface, quando implementados.</p>
-            </article>
-          </div>
-        </aside>
-      </section>
+  <script>
+    (function(){
+      const html=document.documentElement;
+      const temaBtn=document.getElementById('btn-tema');
+      const mais=document.getElementById('btn-fonte-mais');
+      const menos=document.getElementById('btn-fonte-menos');
+      let storageOK=true;
+      try{localStorage.setItem('_t','1');localStorage.removeItem('_t');}catch(e){storageOK=false;}
+      const get=(k)=>storageOK?localStorage.getItem(k):null;
+      const set=(k,v)=>{if(storageOK)localStorage.setItem(k,v);};
 
-      <section class="content-section">
-        <div class="section-heading">
-          <p class="eyebrow">Uso de dados</p>
-          <h2>O que o portal faz e o que não faz.</h2>
-        </div>
+      let tema=get('tema') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      html.setAttribute('data-theme', tema);
 
-        <div class="cards-grid">
-          <article class="card">
-            <div>
-              <h3 class="card-title">Não coleta diretamente</h3>
-              <p class="card-description">O site não foi projetado para exigir nome completo, documento, endereço físico ou dados bancários do usuário.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div>
-              <h3 class="card-title">Pode exibir scripts de terceiros</h3>
-              <p class="card-description">Ferramentas como analytics, anúncios e integrações externas podem operar segundo as políticas próprias desses fornecedores.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div>
-              <h3 class="card-title">Pode usar armazenamento local</h3>
-              <p class="card-description">Preferências de interface, quando adotadas, podem ser guardadas localmente no navegador para manter consistência visual entre visitas.</p>
-            </div>
-          </article>
-        </div>
-      </section>
+      let fontScale=parseInt(get('fontScale') || '100',10);
+      html.style.fontSize=fontScale + '%';
 
-      <section class="newsletter-section glass-panel">
-        <div>
-          <p class="eyebrow">Terceiros e links externos</p>
-          <h2>Ao sair do Café Pra Viagem, outras regras podem valer.</h2>
-          <p class="section-support">
-            Links para parceiros, lojas, mapas, redes sociais e plataformas externas estão sujeitos às políticas próprias desses ambientes. O usuário deve consultar os termos e políticas correspondentes ao acessar serviços fora do domínio cafepraviagem.com.
-          </p>
-        </div>
-      </section>
+      temaBtn.addEventListener('click',()=>{
+        tema=tema==='dark'?'light':'dark';
+        html.setAttribute('data-theme',tema);
+        set('tema',tema);
+      });
 
-      <section class="content-section">
-        <div class="section-heading">
-          <p class="eyebrow">Atualizações</p>
-          <h2>Revisão desta política.</h2>
-        </div>
+      mais.addEventListener('click',()=>{
+        if(fontScale<130){fontScale+=10;html.style.fontSize=fontScale+'%';set('fontScale',fontScale);}
+      });
 
-        <div class="collection-card glass-panel">
-          <span>01</span>
-          <h3>Versão editorial viva</h3>
-          <p>
-            Esta política pode ser atualizada para refletir mudanças de infraestrutura, integrações, monetização ou requisitos legais. A versão publicada no portal será sempre considerada a referência mais recente.
-          </p>
-        </div>
-      </section>
-    </main>
-  </div>
+      menos.addEventListener('click',()=>{
+        if(fontScale>90){fontScale-=10;html.style.fontSize=fontScale+'%';set('fontScale',fontScale);}
+      });
+    })();
+  </script>
 </body>
 </html>
