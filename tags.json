@@ -1,152 +1,146 @@
 {
-  "Rápido": {
-    "cor_texto": "#8F4A22",
-    "fundo": "rgba(217, 119, 70, 0.14)",
-    "borda": "rgba(217, 119, 70, 0.28)"
+  "Preparo Antecipado": {
+    "label": "Preparo antecipado",
+    "color": "#7b4127",
+    "bg": "rgba(233, 205, 184, 0.36)",
+    "border": "#b56e49"
   },
-  "Aeroporto": {
-    "cor_texto": "#6A4C3E",
-    "fundo": "rgba(160, 125, 104, 0.16)",
-    "borda": "rgba(160, 125, 104, 0.32)"
+  "Sem Louça Extra": {
+    "label": "Sem louça extra",
+    "color": "#4f6f51",
+    "bg": "rgba(210, 226, 208, 0.34)",
+    "border": "#759478"
   },
-  "Cidade": {
-    "cor_texto": "#6B5750",
-    "fundo": "rgba(140, 116, 103, 0.14)",
-    "borda": "rgba(140, 116, 103, 0.3)"
+  "Com Leite": {
+    "label": "Com leite",
+    "color": "#835846",
+    "bg": "rgba(232, 219, 210, 0.42)",
+    "border": "#b18b76"
   },
-  "Executivo": {
-    "cor_texto": "#78563C",
-    "fundo": "rgba(191, 138, 97, 0.14)",
-    "borda": "rgba(191, 138, 97, 0.28)"
+  "Resfriamento Rápido": {
+    "label": "Resfriamento rápido",
+    "color": "#5f7381",
+    "bg": "rgba(214, 225, 232, 0.38)",
+    "border": "#88a1af"
   },
-  "Curadoria": {
-    "cor_texto": "#5F4336",
-    "fundo": "rgba(118, 88, 72, 0.14)",
-    "borda": "rgba(118, 88, 72, 0.3)"
+  "Mais Equilibrado": {
+    "label": "Mais equilibrado",
+    "color": "#7a5531",
+    "bg": "rgba(231, 214, 194, 0.38)",
+    "border": "#ab825d"
   },
-  "Nômade": {
-    "cor_texto": "#5F5A78",
-    "fundo": "rgba(133, 99, 130, 0.14)",
-    "borda": "rgba(133, 99, 130, 0.28)"
-  },
-  "Mochilão": {
-    "cor_texto": "#6D5D3F",
-    "fundo": "rgba(179, 141, 69, 0.14)",
-    "borda": "rgba(179, 141, 69, 0.28)"
-  },
-  "Econômico": {
-    "cor_texto": "#765D2D",
-    "fundo": "rgba(184, 144, 57, 0.14)",
-    "borda": "rgba(184, 144, 57, 0.28)"
-  },
-  "Coworking": {
-    "cor_texto": "#4E6578",
-    "fundo": "rgba(88, 119, 146, 0.14)",
-    "borda": "rgba(88, 119, 146, 0.28)"
+  "Antivazamento": {
+    "label": "Antivazamento",
+    "color": "#4c6a58",
+    "bg": "rgba(206, 224, 213, 0.34)",
+    "border": "#73907f"
   },
   "Portátil": {
-    "cor_texto": "#6C4B3F",
-    "fundo": "rgba(217, 119, 70, 0.12)",
-    "borda": "rgba(217, 119, 70, 0.24)"
+    "label": "Portátil",
+    "color": "#77482c",
+    "bg": "rgba(236, 214, 194, 0.36)",
+    "border": "#b87a52"
   },
-  "Leve": {
-    "cor_texto": "#5B6D46",
-    "fundo": "rgba(93, 122, 67, 0.14)",
-    "borda": "rgba(93, 122, 67, 0.28)"
+  "Kit Leve": {
+    "label": "Kit leve",
+    "color": "#6d5f49",
+    "bg": "rgba(227, 220, 209, 0.4)",
+    "border": "#9a8a72"
   },
-  "Moedor": {
-    "cor_texto": "#5E4A43",
-    "fundo": "rgba(132, 107, 98, 0.14)",
-    "borda": "rgba(132, 107, 98, 0.28)"
+  "Maior Volume": {
+    "label": "Maior volume",
+    "color": "#7a603f",
+    "bg": "rgba(231, 219, 201, 0.4)",
+    "border": "#a98c67"
   },
-  "Essencial": {
-    "cor_texto": "#704E38",
-    "fundo": "rgba(207, 122, 52, 0.14)",
-    "borda": "rgba(207, 122, 52, 0.28)"
+  "Casa Pequena": {
+    "label": "Casa pequena",
+    "color": "#6f4c38",
+    "bg": "rgba(228, 214, 205, 0.4)",
+    "border": "#9f7c68"
   },
-  "Térmico": {
-    "cor_texto": "#7A4E44",
-    "fundo": "rgba(181, 103, 75, 0.14)",
-    "borda": "rgba(181, 103, 75, 0.28)"
+  "Pickup": {
+    "label": "Pickup",
+    "color": "#7b4329",
+    "bg": "rgba(236, 208, 188, 0.36)",
+    "border": "#bb7349"
   },
-  "Minimalista": {
-    "cor_texto": "#5F4336",
-    "fundo": "rgba(118, 88, 72, 0.12)",
-    "borda": "rgba(118, 88, 72, 0.26)"
+  "Refil Friendly": {
+    "label": "Refil friendly",
+    "color": "#4d6c4f",
+    "bg": "rgba(212, 227, 210, 0.34)",
+    "border": "#769477"
   },
-  "Setup": {
-    "cor_texto": "#6A4F47",
-    "fundo": "rgba(154, 126, 115, 0.14)",
-    "borda": "rgba(154, 126, 115, 0.28)"
+  "Parada Curta": {
+    "label": "Parada curta",
+    "color": "#7b4b33",
+    "bg": "rgba(231, 214, 198, 0.36)",
+    "border": "#ac7d62"
   },
-  "Precisão": {
-    "cor_texto": "#4C6371",
-    "fundo": "rgba(88, 119, 146, 0.12)",
-    "borda": "rgba(88, 119, 146, 0.26)"
+  "Descoberta Local": {
+    "label": "Descoberta local",
+    "color": "#5f6d49",
+    "bg": "rgba(220, 226, 208, 0.36)",
+    "border": "#8b9b70"
   },
-  "Acessórios": {
-    "cor_texto": "#68554D",
-    "fundo": "rgba(141, 113, 101, 0.12)",
-    "borda": "rgba(141, 113, 101, 0.26)"
+  "Versátil": {
+    "label": "Versátil",
+    "color": "#6a4a34",
+    "bg": "rgba(227, 214, 205, 0.4)",
+    "border": "#9b7a66"
   },
-  "Organização": {
-    "cor_texto": "#5D6546",
-    "fundo": "rgba(109, 130, 82, 0.14)",
-    "borda": "rgba(109, 130, 82, 0.28)"
+  "Baixa Acidez": {
+    "label": "Baixa acidez",
+    "color": "#6f5333",
+    "bg": "rgba(233, 220, 204, 0.4)",
+    "border": "#a58869"
   },
-  "Logística": {
-    "cor_texto": "#6B5750",
-    "fundo": "rgba(140, 116, 103, 0.12)",
-    "borda": "rgba(140, 116, 103, 0.26)"
+  "Perfil Vivo": {
+    "label": "Perfil vivo",
+    "color": "#8b5f4c",
+    "bg": "rgba(236, 220, 214, 0.42)",
+    "border": "#b48d7c"
   },
-  "Checklist": {
-    "cor_texto": "#7D5C34",
-    "fundo": "rgba(179, 141, 69, 0.14)",
-    "borda": "rgba(179, 141, 69, 0.28)"
+  "Reposição": {
+    "label": "Reposição",
+    "color": "#5f6a7b",
+    "bg": "rgba(216, 222, 233, 0.38)",
+    "border": "#8792aa"
   },
-  "Hotel": {
-    "cor_texto": "#755E55",
-    "fundo": "rgba(149, 121, 109, 0.14)",
-    "borda": "rgba(149, 121, 109, 0.28)"
+  "Rotina Montada": {
+    "label": "Rotina montada",
+    "color": "#57684d",
+    "bg": "rgba(214, 223, 210, 0.36)",
+    "border": "#809173"
   },
-  "Prático": {
-    "cor_texto": "#8B532F",
-    "fundo": "rgba(217, 119, 70, 0.16)",
-    "borda": "rgba(217, 119, 70, 0.3)"
+  "Sem Diluição": {
+    "label": "Sem diluição",
+    "color": "#597282",
+    "bg": "rgba(214, 226, 234, 0.38)",
+    "border": "#86a1b1"
   },
-  "Tempo": {
-    "cor_texto": "#6B4C33",
-    "fundo": "rgba(191, 138, 97, 0.14)",
-    "borda": "rgba(191, 138, 97, 0.28)"
+  "Conforto": {
+    "label": "Conforto",
+    "color": "#7b4e39",
+    "bg": "rgba(234, 217, 206, 0.4)",
+    "border": "#ab8068"
   },
-  "Compra": {
-    "cor_texto": "#6F5635",
-    "fundo": "rgba(184, 144, 57, 0.12)",
-    "borda": "rgba(184, 144, 57, 0.26)"
+  "Sem Bagunça": {
+    "label": "Sem bagunça",
+    "color": "#6a624f",
+    "bg": "rgba(225, 221, 213, 0.4)",
+    "border": "#99917d"
   },
-  "Planejamento": {
-    "cor_texto": "#5E4C44",
-    "fundo": "rgba(132, 107, 98, 0.12)",
-    "borda": "rgba(132, 107, 98, 0.26)"
+  "Hábito": {
+    "label": "Hábito",
+    "color": "#556a52",
+    "bg": "rgba(214, 223, 212, 0.36)",
+    "border": "#7f937b"
   },
-  "Foco": {
-    "cor_texto": "#55624A",
-    "fundo": "rgba(93, 122, 67, 0.14)",
-    "borda": "rgba(93, 122, 67, 0.28)"
-  },
-  "Camping": {
-    "cor_texto": "#5D6546",
-    "fundo": "rgba(109, 130, 82, 0.14)",
-    "borda": "rgba(109, 130, 82, 0.28)"
-  },
-  "Outdoor": {
-    "cor_texto": "#5B6947",
-    "fundo": "rgba(111, 137, 88, 0.14)",
-    "borda": "rgba(111, 137, 88, 0.28)"
-  },
-  "Aeropress": {
-    "cor_texto": "#864B33",
-    "fundo": "rgba(207, 122, 52, 0.14)",
-    "borda": "rgba(207, 122, 52, 0.28)"
+  "Porções Prontas": {
+    "label": "Porções prontas",
+    "color": "#7b5435",
+    "bg": "rgba(235, 220, 205, 0.4)",
+    "border": "#aa8260"
   }
 }
