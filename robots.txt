@@ -1,7 +1,7 @@
 User-agent: *
+Allow: /
+
 Disallow: /*?q=*
 Disallow: /*?modal=*
 
-Allow: /
-
-Sitemap: https://cafecombytes.com/sitemap.xml
+Sitemap: https://cafepraviagem.com/sitemap.xml
