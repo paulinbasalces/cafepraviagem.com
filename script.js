@@ -1,548 +1,467 @@
-const state = {
-  dados: [],
-  parceiros: [],
-  tagsConfig: {},
-  termo: "",
-  filtro: "all",
-  fonteAlternativa: false,
-  theme: "light",
-  activeModalId: null
-};
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+  let baseDeDados = [];
+  let configTags = {};
+  let parceirosDaRede = [];
+  let categoriaAtiva = 'Todas';
 
-const elements = {
-  root: document.documentElement,
-  searchForm: document.querySelector(".search-bar"),
-  searchInput: document.querySelector("#searchInput"),
-  clearButton: document.querySelector("[data-clear-search]"),
-  googleFallbackButton: document.querySelector("[data-google-fallback]"),
-  cardsGrid: document.querySelector("#cardsGrid"),
-  emptyState: document.querySelector("#emptyState"),
-  bentoButtons: Array.from(document.querySelectorAll(".bento-card")),
-  activeTags: document.querySelector("#activeTags"),
-  resultsCount: document.querySelector("[data-results-count]"),
-  resultsLabel: document.querySelector("[data-results-label]"),
-  partnersContainer: document.querySelector("#partnersContainer"),
-  totalStat: document.querySelector("[data-stat-total]"),
-  categoryStat: document.querySelector("[data-stat-categories]"),
-  tagsStat: document.querySelector("[data-stat-tags]"),
-  modal: document.querySelector("#detailModal"),
-  modalContent: document.querySelector("#modalContent"),
-  closeModalButton: document.querySelector("[data-close-modal]"),
-  themeToggle: document.querySelector("[data-theme-toggle]"),
-  fontToggle: document.querySelector("[data-font-toggle]")
-};
+  const htmlElement = document.documentElement;
+  const campoBusca = document.getElementById('campo-busca');
+  const btnLimpar = document.getElementById('btn-limpar-busca');
+  const btnGoogleBusca = document.getElementById('btn-google-busca');
+  const btnTema = document.getElementById('btn-tema');
+  const btnFonteMais = document.getElementById('btn-fonte-mais');
+  const btnFonteMenos = document.getElementById('btn-fonte-menos');
+  const containerBento = document.getElementById('bento-menu');
+  const containerLista = document.getElementById('lista-ferramentas');
+  const statusResultados = document.getElementById('status-resultados');
+  const totalFerramentas = document.getElementById('total-ferramentas');
+  const totalCategorias = document.getElementById('total-categorias');
+  const parceirosContainer = document.getElementById('grid-parceiros-container');
+  const modalOverlay = document.getElementById('modal-overlay');
+  const fecharModalBtn = document.getElementById('fechar-modal');
 
-async function loadPortalData() {
-  try {
-    elements.cardsGrid.setAttribute("aria-busy", "true");
+  const tituloModal = document.getElementById('artigo-titulo');
+  const categoriaModal = document.getElementById('artigo-categoria');
+  const emojiModal = document.getElementById('artigo-emoji');
+  const dorModal = document.getElementById('artigo-dor');
+  const descricaoModal = document.getElementById('artigo-descricao');
+  const melhorParaModal = document.getElementById('artigo-melhor-para');
+  const cuidadoModal = document.getElementById('artigo-cuidado');
+  const linkModal = document.getElementById('artigo-link');
+  const tagsModal = document.getElementById('artigo-tags');
+  const botoesCompartilhamento = document.getElementById('botoes-compartilhamento');
 
-    const [dadosResponse, parceirosResponse, tagsResponse] = await Promise.all([
-      fetch("./dados.json"),
-      fetch("./parceiros.json"),
-      fetch("./tags.json")
-    ]);
-
-    if (!dadosResponse.ok || !parceirosResponse.ok || !tagsResponse.ok) {
-      throw new Error("Falha ao carregar os arquivos de dados.");
+  const storageSeguro = (() => {
+    try {
+      const chave = '__cpv_test__';
+      localStorage.setItem(chave, '1');
+      localStorage.removeItem(chave);
+      return localStorage;
+    } catch (error) {
+      return null;
     }
+  })();
 
-    const [dados, parceiros, tagsConfig] = await Promise.all([
-      dadosResponse.json(),
-      parceirosResponse.json(),
-      tagsResponse.json()
-    ]);
-
-    state.dados = Array.isArray(dados) ? dados : [];
-    state.parceiros = Array.isArray(parceiros) ? parceiros : [];
-    state.tagsConfig = tagsConfig && typeof tagsConfig === "object" ? tagsConfig : {};
-
-    updateStats();
-    renderPartners();
-    syncFromURL();
-    renderAll();
-  } catch (error) {
-    elements.cardsGrid.innerHTML = `
-      <article class="empty-state glass-panel">
-        <div class="empty-icon" aria-hidden="true">⚠️</div>
-        <h3>Não foi possível carregar a curadoria</h3>
-        <p>Verifique os arquivos dados.json, parceiros.json e tags.json para concluir o portal.</p>
-      </article>
-    `;
-    elements.emptyState.hidden = true;
-    elements.resultsCount.textContent = "0 resultados";
-    elements.resultsLabel.textContent = "dados indisponíveis no momento";
-  } finally {
-    elements.cardsGrid.setAttribute("aria-busy", "false");
-  }
-}
-
-function updateStats() {
-  const categorias = new Set(state.dados.map((item) => normalizeText(item.categoria || "")));
-  const tags = new Set(
-    state.dados.flatMap((item) => extractTags(item.nome || "")).map((tag) => normalizeText(tag))
-  );
-
-  animateNumber(elements.totalStat, state.dados.length);
-  animateNumber(elements.categoryStat, categorias.size);
-  animateNumber(elements.tagsStat, tags.size);
-}
-
-function animateNumber(element, target) {
-  if (!element) return;
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reducedMotion) {
-    element.textContent = String(target);
-    return;
-  }
-
-  const duration = 600;
-  const start = performance.now();
-  const initial = Number(element.textContent) || 0;
-
-  function step(timestamp) {
-    const progress = Math.min((timestamp - start) / duration, 1);
-    const value = Math.round(initial + (target - initial) * (1 - Math.pow(1 - progress, 3)));
-    element.textContent = String(value);
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    }
-  }
-
-  requestAnimationFrame(step);
-}
-
-function normalizeText(value) {
-  return String(value)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
-}
-
-function extractTags(name) {
-  const matches = String(name).match(/\[(.*?)\]/g) || [];
-  return matches.map((match) => match.replace(/[\[\]]/g, "").trim()).filter(Boolean);
-}
-
-function cleanName(name) {
-  return String(name).replace(/\s*\[(.*?)\]/g, "").trim();
-}
-
-function resolveFilterAlias(filter) {
-  const aliases = {
-    cafeterias: ["cafeteria", "cafeterias", "airport", "aeroporto", "cidade", "cidades"],
-    equipamentos: ["equipamento", "equipamentos", "gear", "setup", "acessorios", "acessórios"],
-    dicas: ["dica", "dicas", "guia", "guias", "logistica", "logística", "preparo"],
-    nomades: ["nomade", "nômade", "nomades", "nômades", "coworking", "trabalho"],
-    camping: ["camping", "outdoor", "acampamento", "estrada", "trail"]
+  const stateTemporario = {
+    tema: null,
+    fonte: 100
   };
 
-  return aliases[filter] || [];
-}
+  const lerPreferencia = (chave) => {
+    if (storageSeguro) return storageSeguro.getItem(chave);
+    return stateTemporario[chave];
+  };
 
-function itemMatchesFilter(item) {
-  if (state.filtro === "all") return true;
+  const salvarPreferencia = (chave, valor) => {
+    if (storageSeguro) {
+      storageSeguro.setItem(chave, valor);
+      return;
+    }
+    stateTemporario[chave] = valor;
+  };
 
-  const categoria = normalizeText(item.categoria || "");
-  const dor = normalizeText(item.dor_resolvida || "");
-  const nome = normalizeText(cleanName(item.nome || ""));
-  const aliases = resolveFilterAlias(state.filtro);
+  const normalizarTexto = (texto = '') =>
+    texto
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
 
-  return aliases.some((alias) =>
-    categoria.includes(alias) || dor.includes(alias) || nome.includes(alias)
-  );
-}
+  const extrairTags = (titulo = '') => {
+    const regex = /\[(.*?)\]/g;
+    const tags = [];
+    let tituloLimpo = titulo;
+    let match;
 
-function itemMatchesSearch(item) {
-  if (!state.termo) return true;
+    while ((match = regex.exec(titulo)) !== null) {
+      tags.push(match[1].trim());
+      tituloLimpo = tituloLimpo.replace(match[0], '').trim();
+    }
 
-  const tags = extractTags(item.nome || "").join(" ");
-  const combined = normalizeText([
-    item.nome,
-    item.categoria,
-    item.dor_resolvida,
-    item.descricao,
-    tags
-  ].join(" "));
+    return { tituloLimpo, tags };
+  };
 
-  return combined.includes(normalizeText(state.termo));
-}
+  const configurarTema = () => {
+    const temaSalvo = lerPreferencia('tema');
+    if (temaSalvo === 'light' || temaSalvo === 'dark') {
+      htmlElement.setAttribute('data-theme', temaSalvo);
+      atualizarIconeTema(temaSalvo);
+      return;
+    }
 
-function getFilteredItems() {
-  return state.dados.filter((item) => itemMatchesFilter(item) && itemMatchesSearch(item));
-}
+    const prefereEscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const temaInicial = prefereEscuro ? 'dark' : 'light';
+    htmlElement.setAttribute('data-theme', temaInicial);
+    atualizarIconeTema(temaInicial);
+  };
 
-function renderAll() {
-  const items = getFilteredItems();
-  renderCards(items);
-  renderActiveTags(items);
-  updateResultsHeader(items);
-  updateBentoState();
-  syncURL();
-}
+  const atualizarIconeTema = (temaAtual) => {
+    if (!btnTema) return;
 
-function renderCards(items) {
-  if (!items.length) {
-    elements.cardsGrid.innerHTML = "";
-    elements.emptyState.hidden = false;
-    return;
-  }
+    btnTema.setAttribute('aria-label', temaAtual === 'dark' ? 'Alternar para tema claro' : 'Alternar para tema escuro');
 
-  elements.emptyState.hidden = true;
-  elements.cardsGrid.innerHTML = items.map(createCardMarkup).join("");
+    if (temaAtual === 'dark') {
+      btnTema.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+        </svg>
+      `;
+    } else {
+      btnTema.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      `;
+    }
+  };
 
-  elements.cardsGrid.querySelectorAll("[data-open-modal]").forEach((button) => {
-    button.addEventListener("click", () => openModal(button.dataset.openModal));
-  });
+  const configurarFonte = () => {
+    const fonteSalva = parseInt(lerPreferencia('fonte') || '100', 10);
+    const valorInicial = Number.isNaN(fonteSalva) ? 100 : fonteSalva;
+    htmlElement.style.fontSize = `${valorInicial}%`;
+    stateTemporario.fonte = valorInicial;
+  };
 
-  elements.cardsGrid.querySelectorAll("[data-share]").forEach((button) => {
-    button.addEventListener("click", () => shareItem(button.dataset.share));
-  });
-}
+  const atualizarFonte = (novoValor) => {
+    stateTemporario.fonte = novoValor;
+    htmlElement.style.fontSize = `${novoValor}%`;
+    salvarPreferencia('fonte', String(novoValor));
+  };
 
-function createCardMarkup(item) {
-  const itemTags = extractTags(item.nome || "");
-  const cleanedTitle = cleanName(item.nome || "");
-  const badgesMarkup = itemTags.map((tag) => createBadgeMarkup(tag)).join("");
-
-  return `
-    <article class="card" id="item-${item.id}">
-      <div class="card-top">
-        <div>
-          <span class="card-category">${escapeHTML(item.categoria || "Curadoria")}</span>
-        </div>
-        <div class="card-emoji" aria-hidden="true">${escapeHTML(item.emoji || "☕")}</div>
-      </div>
-      <div>
-        <h3 class="card-title">${escapeHTML(cleanedTitle)}</h3>
-        <p class="card-problem">${escapeHTML(item.dor_resolvida || "")}</p>
-      </div>
-      <p class="card-description">${escapeHTML(item.descricao || "")}</p>
-      <div class="card-actions">
-        <a class="card-link" href="${escapeAttribute(item.url || "#")}" target="_blank" rel="noopener noreferrer">Acessar</a>
-        <button class="card-detail" type="button" data-open-modal="${escapeAttribute(String(item.id))}">Detalhes</button>
-        <button class="share-button" type="button" data-share="${escapeAttribute(String(item.id))}">Compartilhar</button>
-      </div>
-      <footer class="card-tags">${badgesMarkup}</footer>
-    </article>
-  `;
-}
-
-function createBadgeMarkup(tag) {
-  const config = state.tagsConfig[tag] || state.tagsConfig[normalizeText(tag)] || {};
-  const textColor = config.cor_texto || "var(--color-text)";
-  const bgColor = config.fundo || "var(--color-primary-highlight)";
-  const borderColor = config.borda || "transparent";
-
-  return `
-    <span class="card-badge" style="color:${escapeAttribute(textColor)};background:${escapeAttribute(bgColor)};border-color:${escapeAttribute(borderColor)};">
-      ${escapeHTML(tag)}
-    </span>
-  `;
-}
-
-function renderActiveTags(items) {
-  const visibleTags = new Set();
-  items.forEach((item) => {
-    extractTags(item.nome || "").forEach((tag) => visibleTags.add(tag));
-  });
-
-  const blocks = [];
-
-  if (state.filtro !== "all") {
-    blocks.push(`<span class="active-tag">Filtro: ${escapeHTML(state.filtro)}</span>`);
-  }
-
-  if (state.termo) {
-    blocks.push(`<span class="active-tag">Busca: ${escapeHTML(state.termo)}</span>`);
-  }
-
-  Array.from(visibleTags).slice(0, 5).forEach((tag) => {
-    blocks.push(`<span class="active-tag">${escapeHTML(tag)}</span>`);
-  });
-
-  elements.activeTags.innerHTML = blocks.join("");
-}
-
-function updateResultsHeader(items) {
-  const total = items.length;
-  const plural = total === 1 ? "resultado" : "resultados";
-  const filtroLabel = state.filtro === "all" ? "toda a curadoria" : `filtro ${state.filtro}`;
-  elements.resultsCount.textContent = `${total} ${plural}`;
-  elements.resultsLabel.textContent = state.termo
-    ? `busca local por "${state.termo}" em ${filtroLabel}`
-    : `exibindo ${filtroLabel}`;
-}
-
-function updateBentoState() {
-  elements.bentoButtons.forEach((button) => {
-    const isActive = button.dataset.filter === state.filtro;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
-  });
-}
-
-function renderPartners() {
-  if (!state.parceiros.length) {
-    elements.partnersContainer.innerHTML = `
-      <article class="partner-item">
-        <p>Adicione projetos em parceiros.json para compor o ecossistema da rede.</p>
-      </article>
-    `;
-    return;
-  }
-
-  elements.partnersContainer.innerHTML = state.parceiros.map((partner) => `
-    <article class="partner-item">
-      <a href="${escapeAttribute(partner.url || "#")}" target="_blank" rel="noopener noreferrer">${escapeHTML(partner.nome || "Parceiro")}</a>
-      <p>${escapeHTML(partner.descricao || "")}</p>
-    </article>
-  `).join("");
-}
-
-function openModal(id) {
-  const item = state.dados.find((entry) => String(entry.id) === String(id));
-  if (!item) return;
-
-  state.activeModalId = String(id);
-  const tags = extractTags(item.nome || "");
-  const cleanedTitle = cleanName(item.nome || "");
-  const metaTags = [
-    `<span>${escapeHTML(item.categoria || "Curadoria")}</span>`,
-    ...tags.map((tag) => `<span>${escapeHTML(tag)}</span>`)
-  ].join("");
-
-  elements.modalContent.innerHTML = `
-    <div class="modal-body">
-      <h2 id="modalTitle">${escapeHTML(cleanedTitle)}</h2>
-      <div class="modal-meta">${metaTags}</div>
-      <p><strong>Dor que resolve:</strong> ${escapeHTML(item.dor_resolvida || "")}</p>
-      <p>${escapeHTML(item.descricao || "")}</p>
-      <div class="modal-actions">
-        <a class="btn btn-primary" href="${escapeAttribute(item.url || "#")}" target="_blank" rel="noopener noreferrer">Abrir recurso</a>
-        <button class="btn btn-secondary" type="button" data-share="${escapeAttribute(String(item.id))}">Compartilhar</button>
-      </div>
-    </div>
-  `;
-
-  const modalShareButton = elements.modalContent.querySelector("[data-share]");
-  if (modalShareButton) {
-    modalShareButton.addEventListener("click", () => shareItem(modalShareButton.dataset.share));
-  }
-
-  if (!elements.modal.open) {
-    elements.modal.showModal();
-  }
-
-  history.pushState({ modal: String(id) }, "", buildURL({ modal: String(id) }));
-}
-
-function closeModal(fromHistory = false) {
-  if (elements.modal.open) {
-    elements.modal.close();
-  }
-  state.activeModalId = null;
-
-  if (!fromHistory) {
+  const atualizarUrlParam = (chave, valor) => {
     const url = new URL(window.location.href);
-    url.searchParams.delete("modal");
-    history.pushState({}, "", url);
-  }
-}
-
-function shareItem(id) {
-  const item = state.dados.find((entry) => String(entry.id) === String(id));
-  if (!item) return;
-
-  const cleanTitle = cleanName(item.nome || "");
-  const shareData = {
-    title: `${cleanTitle} | Café Pra Viagem`,
-    text: `${cleanTitle} — ${item.descricao || ""}`,
-    url: item.url || window.location.href
+    if (!valor) {
+      url.searchParams.delete(chave);
+    } else {
+      url.searchParams.set(chave, valor);
+    }
+    window.history.replaceState({}, '', url);
   };
 
-  if (navigator.share) {
-    navigator.share(shareData).catch(() => null);
-    return;
-  }
+  const renderizarParceiros = () => {
+    if (!parceirosContainer) return;
 
-  const fallbackText = `${shareData.title}\n${shareData.text}\n${shareData.url}`;
-  navigator.clipboard.writeText(fallbackText).then(() => {
-    alert("Link copiado para a área de transferência.");
-  }).catch(() => {
-    alert("Não foi possível compartilhar agora.");
-  });
-}
+    parceirosContainer.innerHTML = parceirosDaRede.map((parceiro) => `
+      <a class="parceiro-card glass-effect" href="${parceiro.url}" target="_blank" rel="noopener noreferrer">
+        <p class="parceiro-categoria">${parceiro.categoria}</p>
+        <strong>${parceiro.nome}</strong>
+        <span>${parceiro.descricao}</span>
+      </a>
+    `).join('');
+  };
 
-function buildURL(extra = {}) {
-  const url = new URL(window.location.href);
-  if (state.termo) {
-    url.searchParams.set("q", state.termo);
-  } else {
-    url.searchParams.delete("q");
-  }
+  const montarResumoCategoria = (categoria) => {
+    const total = categoria === 'Todas'
+      ? baseDeDados.length
+      : baseDeDados.filter((item) => item.categoria === categoria).length;
 
-  if (state.filtro && state.filtro !== "all") {
-    url.searchParams.set("filtro", state.filtro);
-  } else {
-    url.searchParams.delete("filtro");
-  }
+    const itemDaCategoria = baseDeDados.find((item) => item.categoria === categoria);
 
-  if (extra.modal) {
-    url.searchParams.set("modal", extra.modal);
-  } else {
-    url.searchParams.delete("modal");
-  }
+    return {
+      total,
+      emoji: categoria === 'Todas' ? '☕' : (itemDaCategoria?.emoji || '☕')
+    };
+  };
 
-  return url.toString();
-}
+  const renderizarFiltros = () => {
+    if (!containerBento) return;
 
-function syncURL() {
-  const currentModal = state.activeModalId;
-  history.replaceState({ modal: currentModal }, "", buildURL({ modal: currentModal }));
-}
+    const categorias = ['Todas', ...new Set(baseDeDados.map((item) => item.categoria))];
 
-function syncFromURL() {
-  const params = new URLSearchParams(window.location.search);
-  const termo = params.get("q");
-  const filtro = params.get("filtro");
-  const modal = params.get("modal");
+    containerBento.innerHTML = categorias.map((categoria) => {
+      const resumo = montarResumoCategoria(categoria);
+      const ativo = categoria === categoriaAtiva ? 'true' : 'false';
 
-  if (termo) {
-    state.termo = termo;
-    elements.searchInput.value = termo;
-  }
+      return `
+        <button class="bento-card" type="button" data-cat="${categoria}" aria-pressed="${ativo}">
+          <span class="bento-card-emoji">${resumo.emoji}</span>
+          <span class="bento-card-copy">
+            <strong>${categoria}</strong>
+            <small>${resumo.total} itens</small>
+          </span>
+        </button>
+      `;
+    }).join('');
 
-  if (filtro) {
-    state.filtro = filtro;
-  }
-
-  if (modal) {
-    requestAnimationFrame(() => openModal(modal));
-  }
-}
-
-function escapeHTML(value) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-function escapeAttribute(value) {
-  return escapeHTML(value);
-}
-
-function initThemeToggle() {
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  state.theme = prefersDark ? "dark" : "light";
-  elements.root.setAttribute("data-theme", state.theme);
-  updateThemeButton();
-
-  elements.themeToggle?.addEventListener("click", () => {
-    state.theme = state.theme === "dark" ? "light" : "dark";
-    elements.root.setAttribute("data-theme", state.theme);
-    updateThemeButton();
-  });
-}
-
-function updateThemeButton() {
-  const isDark = state.theme === "dark";
-  elements.themeToggle.setAttribute("aria-label", isDark ? "Ativar modo claro" : "Ativar modo escuro");
-  elements.themeToggle.innerHTML = isDark
-    ? '<span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>'
-    : '<span class="theme-icon theme-icon-sun" aria-hidden="true">☼</span>';
-}
-
-function initFontToggle() {
-  elements.fontToggle?.addEventListener("click", () => {
-    state.fonteAlternativa = !state.fonteAlternativa;
-    document.body.classList.toggle("font-alt", state.fonteAlternativa);
-    elements.fontToggle.setAttribute(
-      "aria-label",
-      state.fonteAlternativa ? "Voltar para tipografia editorial" : "Ativar tipografia moderna"
-    );
-  });
-}
-
-function bindEvents() {
-  elements.searchForm?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    state.termo = elements.searchInput.value.trim();
-    renderAll();
-  });
-
-  elements.searchInput?.addEventListener("input", (event) => {
-    state.termo = event.target.value.trim();
-    renderAll();
-  });
-
-  elements.clearButton?.addEventListener("click", () => {
-    state.termo = "";
-    elements.searchInput.value = "";
-    renderAll();
-    elements.searchInput.focus();
-  });
-
-  elements.googleFallbackButton?.addEventListener("click", () => {
-    const query = state.termo || "cafeterias specialty coffee aeroporto gear portátil café viagem";
-    const url = `https://www.google.com/search?q=${encodeURIComponent(query + " site:cafepraviagem.com")}`;
-    window.open(url, "_blank", "noopener,noreferrer");
-  });
-
-  elements.bentoButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      state.filtro = button.dataset.filter || "all";
-      renderAll();
+    containerBento.querySelectorAll('.bento-card').forEach((botao) => {
+      botao.addEventListener('click', () => {
+        categoriaAtiva = botao.dataset.cat;
+        renderizarFiltros();
+        renderizarInterface();
+      });
     });
-  });
+  };
 
-  elements.closeModalButton?.addEventListener("click", () => closeModal());
+  const construirBadgeHtml = (tagNome) => {
+    const config = configTags[tagNome];
 
-  elements.modal?.addEventListener("click", (event) => {
-    const rect = elements.modalContent.getBoundingClientRect();
-    const clickedOutside = (
-      event.clientX < rect.left ||
-      event.clientX > rect.right ||
-      event.clientY < rect.top ||
-      event.clientY > rect.bottom
-    );
-
-    if (clickedOutside) {
-      closeModal();
+    if (config) {
+      return `<span class="card-alert-tag" style="color:${config.color}; background:${config.bg}; border-color:${config.border};">${config.label}</span>`;
     }
-  });
 
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && elements.modal.open) {
-      closeModal();
+    return `<span class="card-alert-tag">${tagNome}</span>`;
+  };
+
+  const abrirModal = (item, atualizarHistorico = true) => {
+    const { tituloLimpo, tags } = extrairTags(item.nome);
+
+    tituloModal.textContent = tituloLimpo;
+    categoriaModal.textContent = item.categoria;
+    emojiModal.textContent = item.emoji || '☕';
+    dorModal.textContent = item.dor_resolvida;
+    descricaoModal.textContent = item.descricao;
+    melhorParaModal.textContent = item.melhor_para;
+    cuidadoModal.textContent = item.cuidado;
+    linkModal.href = item.url;
+    tagsModal.innerHTML = tags.map(construirBadgeHtml).join('');
+    construirCompartilhamento(item);
+
+    modalOverlay.classList.remove('hidden');
+    modalOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    if (atualizarHistorico) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('modal', item.id);
+      window.history.pushState({ modal: item.id }, '', url);
     }
-  });
+  };
 
-  window.addEventListener("popstate", () => {
+  const fecharModal = (atualizarHistorico = true) => {
+    modalOverlay.classList.add('hidden');
+    modalOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+
+    if (atualizarHistorico) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('modal');
+      window.history.pushState({}, '', url);
+    }
+  };
+
+  const construirCompartilhamento = (item) => {
+    const { tituloLimpo } = extrairTags(item.nome);
+    const urlCompartilhavel = `${window.location.origin}${window.location.pathname}?modal=${item.id}`;
+    const texto = `Achei isso no Café Pra Viagem: ${tituloLimpo}`;
+
+    botoesCompartilhamento.innerHTML = `
+      <button class="btn-share" type="button" id="share-native">Compartilhar</button>
+      <button class="btn-share" type="button" id="share-copy">Copiar link</button>
+    `;
+
+    const shareNative = document.getElementById('share-native');
+    const shareCopy = document.getElementById('share-copy');
+
+    shareNative.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: tituloLimpo,
+            text: texto,
+            url: urlCompartilhavel
+          });
+        } catch (error) {}
+      } else {
+        window.open(`https://wa.me/?text=${encodeURIComponent(`${texto} ${urlCompartilhavel}`)}`, '_blank', 'noopener,noreferrer');
+      }
+    });
+
+    shareCopy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(urlCompartilhavel);
+        shareCopy.textContent = 'Link copiado';
+        setTimeout(() => {
+          shareCopy.textContent = 'Copiar link';
+        }, 1800);
+      } catch (error) {
+        shareCopy.textContent = 'Não foi possível copiar';
+      }
+    });
+  };
+
+  const abrirModalDaUrl = () => {
     const params = new URLSearchParams(window.location.search);
-    const modal = params.get("modal");
+    const modalId = params.get('modal');
+    if (!modalId) return;
 
-    if (modal) {
-      openModal(modal);
-    } else if (elements.modal.open) {
-      closeModal(true);
+    const item = baseDeDados.find((entry) => String(entry.id) === String(modalId));
+    if (item) abrirModal(item, false);
+  };
+
+  const renderizarCards = (itens) => {
+    if (!itens.length) {
+      containerLista.innerHTML = `
+        <article class="card-vazio glass-effect">
+          <h3>Nenhum resultado local encontrado</h3>
+          <p>Tente termos como “mug térmica”, “cold brew”, “cafeteria”, “grão doce”, “método portátil” ou use a busca no Google para ampliar o mapa.</p>
+        </article>
+      `;
+      return;
     }
 
-    const termo = params.get("q") || "";
-    const filtro = params.get("filtro") || "all";
-    state.termo = termo;
-    state.filtro = filtro;
-    if (elements.searchInput.value !== termo) {
-      elements.searchInput.value = termo;
+    const grupos = itens.reduce((acc, item) => {
+      if (!acc[item.categoria]) acc[item.categoria] = [];
+      acc[item.categoria].push(item);
+      return acc;
+    }, {});
+
+    containerLista.innerHTML = Object.entries(grupos).map(([categoria, grupo]) => `
+      <section class="categoria-bloco">
+        <h2>${categoria}</h2>
+        <div class="categoria-grid">
+          ${grupo.map((item) => {
+            const { tituloLimpo, tags } = extrairTags(item.nome);
+            return `
+              <article class="card-portal glass-effect">
+                <div class="card-topo">
+                  <span class="card-emoji">${item.emoji || '☕'}</span>
+                  <p class="card-categoria">${item.categoria}</p>
+                </div>
+                <h3>${tituloLimpo}</h3>
+                <p class="card-dor">${item.dor_resolvida}</p>
+                <p class="card-descricao">${item.descricao}</p>
+                ${tags.length ? `<div class="tags-container">${tags.map(construirBadgeHtml).join('')}</div>` : ''}
+                <div class="card-footer">
+                  <button class="btn-card-acao secundario" type="button" data-id="${item.id}">Ver detalhes</button>
+                  <a class="btn-card-acao primario" href="${item.url}" target="_blank" rel="noopener noreferrer">Abrir fonte</a>
+                </div>
+              </article>
+            `;
+          }).join('')}
+        </div>
+      </section>
+    `).join('');
+
+    containerLista.querySelectorAll('[data-id]').forEach((botao) => {
+      botao.addEventListener('click', () => {
+        const item = baseDeDados.find((entry) => String(entry.id) === String(botao.dataset.id));
+        if (item) abrirModal(item);
+      });
+    });
+  };
+
+  const renderizarInterface = () => {
+    const termo = normalizarTexto(campoBusca.value.trim());
+
+    const filtradas = baseDeDados.filter((item) => {
+      const textoBase = normalizarTexto([
+        item.nome,
+        item.categoria,
+        item.dor_resolvida,
+        item.descricao,
+        item.melhor_para,
+        item.cuidado
+      ].join(' '));
+
+      const bateTexto = termo === '' || textoBase.includes(termo);
+      const bateCategoria = categoriaAtiva === 'Todas' || item.categoria === categoriaAtiva;
+
+      return bateTexto && bateCategoria;
+    });
+
+    statusResultados.textContent = `${filtradas.length} referências locais encontradas. Use “Buscar no Google” para ampliar a pesquisa externa.`;
+    renderizarCards(filtradas);
+  };
+
+  const carregarInfraestrutura = async () => {
+    try {
+      const [dados, parceiros, tags] = await Promise.all([
+        fetch('dados.json').then((res) => res.json()),
+        fetch('parceiros.json').then((res) => res.json()),
+        fetch('tags.json').then((res) => res.json())
+      ]);
+
+      baseDeDados = Array.isArray(dados) ? dados : [];
+      parceirosDaRede = Array.isArray(parceiros) ? parceiros : [];
+      configTags = tags || {};
+
+      totalFerramentas.textContent = String(baseDeDados.length);
+      totalCategorias.textContent = String(new Set(baseDeDados.map((item) => item.categoria)).size);
+
+      const queryInicial = new URLSearchParams(window.location.search).get('q');
+      if (queryInicial) campoBusca.value = queryInicial;
+
+      renderizarParceiros();
+      renderizarFiltros();
+      renderizarInterface();
+      abrirModalDaUrl();
+    } catch (error) {
+      statusResultados.textContent = 'Não foi possível carregar a curadoria local agora.';
+      containerLista.innerHTML = `
+        <article class="card-vazio glass-effect">
+          <h3>Falha ao carregar o portal</h3>
+          <p>Verifique se os arquivos <code>dados.json</code>, <code>parceiros.json</code> e <code>tags.json</code> estão na mesma pasta do site.</p>
+        </article>
+      `;
     }
-    renderAll();
+  };
+
+  configurarTema();
+  configurarFonte();
+
+  btnTema.addEventListener('click', () => {
+    const temaAtual = htmlElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const proximoTema = temaAtual === 'dark' ? 'light' : 'dark';
+    htmlElement.setAttribute('data-theme', proximoTema);
+    salvarPreferencia('tema', proximoTema);
+    atualizarIconeTema(proximoTema);
   });
-}
 
-initThemeToggle();
-initFontToggle();
-bindEvents();
-loadPortalData();
+  btnFonteMais.addEventListener('click', () => {
+    if (stateTemporario.fonte < 130) atualizarFonte(stateTemporario.fonte + 10);
+  });
+
+  btnFonteMenos.addEventListener('click', () => {
+    if (stateTemporario.fonte > 90) atualizarFonte(stateTemporario.fonte - 10);
+  });
+
+  campoBusca.addEventListener('input', () => {
+    const valor = campoBusca.value.trim();
+    atualizarUrlParam('q', valor || null);
+    renderizarInterface();
+  });
+
+  btnLimpar.addEventListener('click', () => {
+    campoBusca.value = '';
+    categoriaAtiva = 'Todas';
+    atualizarUrlParam('q', null);
+    renderizarFiltros();
+    renderizarInterface();
+    campoBusca.focus();
+  });
+
+  btnGoogleBusca.addEventListener('click', () => {
+    const termo = campoBusca.value.trim();
+    const consulta = termo ? `${termo} café pra viagem` : 'café pra viagem';
+    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(consulta)}`;
+    window.open(searchUrl, '_blank', 'noopener,noreferrer');
+  });
+
+  fecharModalBtn.addEventListener('click', () => fecharModal());
+
+  modalOverlay.addEventListener('click', (event) => {
+    if (event.target === modalOverlay) fecharModal();
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modalOverlay.classList.contains('hidden')) {
+      fecharModal();
+    }
+  });
+
+  window.addEventListener('popstate', () => {
+    const modalId = new URLSearchParams(window.location.search).get('modal');
+    if (!modalId) {
+      modalOverlay.classList.add('hidden');
+      modalOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      return;
+    }
+
+    const item = baseDeDados.find((entry) => String(entry.id) === String(modalId));
+    if (item) abrirModal(item, false);
+  });
+
+  carregarInfraestrutura();
+});
