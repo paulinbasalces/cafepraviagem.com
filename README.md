@@ -1,113 +1,92 @@
-# Café Pra Viagem
+# ☕ Café Pra Viagem
+
+O **Café Pra Viagem** nasceu para resolver uma cena muito específica, mas extremamente comum: a pessoa ama café, mas a rotina não permite sentar com calma para consumir bem. O deslocamento, a saída cedo, a correria entre compromissos e a dificuldade de encontrar boas opções no caminho criam um espaço perfeito para um portal editorial focado em café em movimento.
+
+Este projeto organiza, em uma arquitetura estática e escalável, um hub sobre **receitas portáteis, equipamentos, cafeterias, grãos e dicas práticas** para quem quer sair com o café sem transformar isso em um ritual inviável.
+
+---
+
+## A história do produto
+
+Quando pensei neste portal, eu não queria criar “mais um site sobre café”. A internet já está cheia de listas genéricas, reviews pouco honestos e conteúdos que ignoram a vida real. O que me interessava era um recorte mais inteligente: **o café como companheiro de deslocamento**.
+
+É aí que nasce o Café Pra Viagem.
+
+A proposta é simples: reduzir atrito. Ajudar o usuário a descobrir o que funciona quando ele precisa preparar em casa, levar com segurança, beber no caminho, escolher melhor um recipiente, decidir qual grão faz sentido para uma rotina portátil ou até encontrar uma cafeteria com recomendação razoável quando sentar é quase impossível.
+
+---
 
 ## Visão do produto
 
-O **Café Pra Viagem** nasceu para resolver uma fricção muito específica, mas extremamente comum: a distância entre quem valoriza café de verdade e a realidade improvisada de aeroportos, hotéis, deslocamentos longos e rotinas móveis.
+**Problema:** amantes de café e pessoas em movimento convivem com escolhas ruins, excesso de improviso, pouca curadoria específica para portabilidade e uma experiência frequentemente frustrante entre praticidade e qualidade.
 
-Como Product Manager, eu, **Paulin Basalces**, enxergo este projeto como um hub editorial de utilidade prática. Não é apenas um site sobre café. É uma camada de decisão para pessoas que vivem em movimento e não querem abrir mão de qualidade, autonomia e contexto.
+**Solução:** um portal curatorial com estrutura leve, busca local, filtros Bento, badges semânticas, modais compartilháveis e base de dados em JSON para organizar o ecossistema do café pra viagem com clareza editorial.
 
-O domínio `cafepraviagem.com` foi concebido para operar como um portal de curadoria orgânica, com arquitetura serverless simples, carregamento rápido e conteúdo orientado por intenção real de busca.
+---
 
-## Problema que o projeto resolve
+## Estratégia editorial
 
-Existe um perfil crescente de usuário que combina:
-- rotina acelerada,
-- trabalho remoto ou híbrido,
-- deslocamentos frequentes,
-- e repertório maior de consumo em café.
+O portal não pretende esgotar o universo do café. Ele opera em um território muito claro:
 
-Esse público sofre, em geral, com três dores centrais:
+- Café para quem está saindo.
+- Café para quem não consegue parar.
+- Café para quem quer praticidade, sem cair em soluções ruins.
+- Café para quem busca melhores decisões em receitas, compra, transporte e parada rápida.
 
-1. **Café ruim em trânsito**  
-   A pessoa viaja e fica presa a opções genéricas, inconsistentes ou caras demais para a qualidade entregue.
+Essa clareza de posicionamento permite que o conteúdo tenha utilidade real e identidade própria.
 
-2. **Falta de tempo para decidir**  
-   Entre um voo, uma reunião, uma conexão ou uma caminhada urbana, não há espaço para pesquisar profundamente.
-
-3. **Dúvida sobre o que levar**  
-   Muitos querem preparar o próprio café em trânsito, mas não sabem quais itens realmente valem o espaço e o peso na mala.
-
-## Proposta editorial
-
-O portal organiza a experiência em três frentes principais:
-
-- **Guias de cafeterias** em aeroportos, cidades e rotas úteis.
-- **Reviews e comparativos de gear portátil**, com foco em leveza, eficiência e adequação ao uso real.
-- **Conteúdo prático de logística**, preparo e rotina, pensado para quem vive entre deslocamentos.
-
-A proposta não é parecer enciclopédica. A proposta é ser útil, objetiva e acionável.
+---
 
 ## Arquitetura do projeto
 
-O site foi estruturado em modelo estático com:
-- `index.html`
-- `style.css`
-- `script.js`
-- `dados.json`
-- `parceiros.json`
-- `tags.json`
-- `sobre.html`
-- `privacidade.html`
-- `robots.txt`
-- `sitemap.xml`
+O Café Pra Viagem foi estruturado em uma arquitetura **serverless/static**, usando apenas:
 
-### Princípios da arquitetura
-- Front-end serverless
-- HTML, CSS, JS e JSON puros
-- Busca local no navegador
-- Curadoria dinâmica carregada por `fetch`
-- Interface com glassmorphism moderno
-- Alternância de tema light/dark
-- Estrutura orientada para SEO técnico e on-page
+- `HTML`
+- `CSS`
+- `JavaScript`
+- `JSON`
 
-## Estratégia de experiência
+Essa decisão reduz custo de infraestrutura, melhora velocidade, simplifica manutenção e fortalece SEO técnico. O conteúdo vive desacoplado em arquivos de dados, permitindo expansão curatorial com baixo atrito operacional.
 
-A UX foi desenhada para leitura rápida e uso intenso em mobile.
+### Estrutura dos arquivos
 
-### Decisões centrais
-- Hero com proposta clara e busca imediata
-- Bento menu para exploração por intenção
-- Cards com leitura escaneável
-- Tags extraídas automaticamente dos títulos
-- Modais com History API para manter contexto
-- Web Share API para distribuição rápida de conteúdo
-- Rodapé semântico com ecossistema de parceiros
+- `index.html` — interface principal do portal.
+- `style.css` — design system glassmorphism com light/dark mode.
+- `script.js` — motor de busca, filtros, modais, tags e parceiros.
+- `dados.json` — base principal da curadoria.
+- `parceiros.json` — ecossistema de projetos parceiros.
+- `tags.json` — configuração visual das badges.
+- `sobre.html` — metodologia editorial.
+- `privacidade.html` — política de privacidade e navegação local.
+- `robots.txt` — orientação para crawlers.
+- `sitemap.xml` — indexação técnica do portal.
 
-## Estratégia de crescimento
+---
 
-O crescimento do projeto depende de três motores complementares:
+## Direção de experiência
 
-### 1. SEO de intenção
-Criar páginas que respondam perguntas e decisões como:
-- onde tomar café bom no aeroporto,
-- qual moedor levar na mala,
-- como fazer café no hotel,
-- qual kit portátil vale a pena.
+A identidade do produto mistura dois imaginários:
 
-### 2. Curadoria como ativo
-Em vez de produzir apenas volume textual, o projeto constrói confiança por meio de seleção útil e contexto de uso.
+1. **Café** — calor, textura, ritual, aroma, pausa, torra, matéria.
+2. **Viagem** — deslocamento, rota, tempo curto, movimento, praticidade, transição.
 
-### 3. Rede de portais
-O portal se fortalece dentro de um ecossistema com projetos complementares, ampliando distribuição, autoridade temática e possibilidades futuras de monetização.
+Essa combinação orienta cores, tipografia, linguagem, estrutura visual e priorização do conteúdo.
 
-## Transparência e monetização
+---
 
-O projeto pode monetizar por:
-- Google Ads,
-- afiliados,
-- publieditoriais sinalizados,
-- páginas transacionais com foco comparativo.
+## O que torna este portal relevante
 
-Ainda assim, a coerência editorial precisa permanecer intacta. O usuário não pode ser enganado sobre o que é conteúdo informativo, o que é curadoria comercial e o que é recomendação patrocinada.
+- Resolve um contexto de uso específico e frequente.
+- Não trata café como decoração, mas como rotina prática.
+- Facilita descoberta de receitas, itens e referências sem confundir o usuário.
+- Pode crescer organicamente com SEO, monetização e expansão editorial.
+- Faz parte de uma rede de portais com arquitetura reutilizável e identidade própria.
 
-## O que torna este portal forte
+---
 
-O diferencial do **Café Pra Viagem** não é falar de café de forma genérica. É interpretar café como infraestrutura emocional e funcional para pessoas em movimento.
+## Declaração final
 
-Quando isso é bem executado, o portal deixa de ser apenas conteúdo e vira referência de decisão.
-
-## Assinatura do projeto
+Como Product Manager, eu penso este projeto como uma camada de utilidade editorial. O papel do Café Pra Viagem não é falar mais alto do que o usuário. É ajudá-lo a sair melhor preparado.
 
 **Paulin Basalces**  
-Product Manager  
-Responsável pela visão de produto, coerência editorial e direção estratégica do portal
+Product Manager
