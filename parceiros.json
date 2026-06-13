@@ -1,26 +1,23 @@
 [
   {
-    "nome": "0800 Eu Vou",
-    "categoria": "Viagens",
-    "descricao": "Curadoria de oportunidades, passagens e estratégias para viajar com mais inteligência.",
-    "url": "https://0800euvou.com"
+    "id": "p-001",
+    "nome": "Amazon Afiliados",
+    "categoria": "Equipamentos",
+    "descricao": "Compre garrafas térmicas e moedores manuais com segurança e entrega rápida.",
+    "url": "https://www.amazon.com.br/"
   },
   {
-    "nome": "Estudar Online",
-    "categoria": "Aprendizado",
-    "descricao": "Hub de plataformas e cursos para qualificação prática e acesso digital ao conhecimento.",
-    "url": "https://estudaronline.org"
+    "id": "p-002",
+    "nome": "Shopee Cupons",
+    "categoria": "Acessórios Básicos",
+    "descricao": "Filtros de papel, balanças portáteis e peças de reposição com frete grátis.",
+    "url": "https://shopee.com.br/"
   },
   {
-    "nome": "Trabalho e Futuro",
-    "categoria": "Carreira",
-    "descricao": "Portal voltado para trabalho, renda, transição profissional e evolução prática.",
-    "url": "https://trabalhoefuturo.com"
-  },
-  {
-    "nome": "Viajar com Seguro",
-    "categoria": "Proteção",
-    "descricao": "Comparativos, entendimento de cobertura e orientação para decisões melhores em seguro viagem.",
-    "url": "https://viajarcomseguro.com"
+    "id": "p-003",
+    "nome": "Academia do Café",
+    "categoria": "Torrefação (BH)",
+    "descricao": "Nossa recomendação oficial para grãos frescos e torra de alta qualidade.",
+    "url": "https://academiadocafe.com.br/"
   }
 ]

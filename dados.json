@@ -1,218 +1,25 @@
 [
-  {
-    "id": 1,
-    "nome": "Cold brew concentrado para sair cedo [Preparo Antecipado]",
-    "categoria": "Receitas",
-    "emoji": "🧊",
-    "dor_resolvida": "Evita correria de manhã sem abrir mão de um café gelado consistente.",
-    "descricao": "Uma base concentrada preparada na noite anterior reduz etapas, facilita transporte em garrafa térmica e permite ajustar gelo, água ou leite ao longo do caminho.",
-    "url": "https://pt.wikipedia.org/wiki/Cold_brew"
-  },
-  {
-    "id": 2,
-    "nome": "Café coado direto na mug térmica [Sem Louça Extra]",
-    "categoria": "Receitas",
-    "emoji": "🫗",
-    "dor_resolvida": "Reduz bagunça e elimina a etapa de transferir o café para outro recipiente.",
-    "descricao": "Preparar o coado diretamente no copo térmico simplifica a rotina e ajuda a manter temperatura por mais tempo em manhãs curtas.",
-    "url": "https://www.hario.com/"
-  },
-  {
-    "id": 3,
-    "nome": "Latte gelado em duas etapas [Com Leite]",
-    "categoria": "Receitas",
-    "emoji": "🥛",
-    "dor_resolvida": "Ajuda a evitar bebida aguada quando o gelo derrete durante o deslocamento.",
-    "descricao": "Separar base forte de café e leite gelado na montagem final melhora textura, sabor e estabilidade da bebida fora de casa.",
-    "url": "https://en.wikipedia.org/wiki/Latte"
-  },
-  {
-    "id": 4,
-    "nome": "Flash brew para clima quente [Resfriamento Rápido]",
-    "categoria": "Receitas",
-    "emoji": "🌤️",
-    "dor_resolvida": "Entrega café gelado mais vivo sem precisar esperar horas de infusão.",
-    "descricao": "O preparo quente direto sobre gelo preserva brilho aromático e cria uma bebida refrescante para levar em pouco tempo.",
-    "url": "https://en.wikipedia.org/wiki/Iced_coffee"
-  },
-  {
-    "id": 5,
-    "nome": "Espresso diluído para viagem [Mais Equilibrado]",
-    "categoria": "Receitas",
-    "emoji": "☕",
-    "dor_resolvida": "Resolve o problema do espresso pequeno demais para acompanhar um deslocamento maior.",
-    "descricao": "Diluir um espresso em água quente controlada cria uma bebida mais longa, portátil e menos agressiva para consumo em trânsito.",
-    "url": "https://pt.wikipedia.org/wiki/Caf%C3%A9_expresso"
-  },
-  {
-    "id": 6,
-    "nome": "Mug térmica com trava de vedação [Antivazamento]",
-    "categoria": "Equipamentos",
-    "emoji": "🧳",
-    "dor_resolvida": "Evita acidentes na mochila, no carro e na bolsa durante o transporte.",
-    "descricao": "Modelos com trava mecânica e vedação confiável ajudam a proteger eletrônicos, documentos e roupa no dia a dia.",
-    "url": "https://www.stanley1913.com/"
-  },
-  {
-    "id": 7,
-    "nome": "Moedor manual compacto [Portátil]",
-    "categoria": "Equipamentos",
-    "emoji": "⚙️",
-    "dor_resolvida": "Permite moer perto do consumo mesmo fora de uma cozinha montada.",
-    "descricao": "Moedores compactos são úteis em viagens, hospedagens e kits minimalistas de preparo, preservando mais frescor do café.",
-    "url": "https://1zpresso.coffee/"
-  },
-  {
-    "id": 8,
-    "nome": "Dripper dobrável de silicone [Kit Leve]",
-    "categoria": "Equipamentos",
-    "emoji": "🧰",
-    "dor_resolvida": "Reduz volume na mochila sem abandonar o café coado.",
-    "descricao": "Um coador dobrável facilita montar um kit portátil com filtro de papel e mug para trabalho híbrido, viagem ou hospedagem.",
-    "url": "https://seatosummit.com/"
-  },
-  {
-    "id": 9,
-    "nome": "Garrafa térmica de boca larga [Maior Volume]",
-    "categoria": "Equipamentos",
-    "emoji": "🧴",
-    "dor_resolvida": "Ajuda quem precisa levar mais café sem perder temperatura cedo demais.",
-    "descricao": "Garrafa de boca larga facilita limpeza, enchimento e uso prolongado em estrada, escritório ou estudo fora de casa.",
-    "url": "https://www.thermos.com/"
-  },
-  {
-    "id": 10,
-    "nome": "Moedor elétrico compacto de bancada [Casa Pequena]",
-    "categoria": "Equipamentos",
-    "emoji": "🔌",
-    "dor_resolvida": "Ajuda quem tem pouco espaço e precisa acelerar o preparo antes de sair.",
-    "descricao": "Um moedor elétrico pequeno pode ganhar minutos valiosos na rotina matinal e manter o ritual viável em cozinhas compactas.",
-    "url": "https://baratza.com/"
-  },
-  {
-    "id": 11,
-    "nome": "Cafeteria com retirada rápida [Pickup]",
-    "categoria": "Cafeterias",
-    "emoji": "🏃",
-    "dor_resolvida": "Diminui tempo perdido em fila quando a pessoa precisa só pegar o café e seguir.",
-    "descricao": "Cafeterias com fluxo de retirada objetiva fazem diferença para quem encaixa o café entre casa, trabalho, academia ou aeroporto.",
-    "url": "https://www.starbucks.com/"
-  },
-  {
-    "id": 12,
-    "nome": "Cafeteria que aceita copo do cliente [Refil Friendly]",
-    "categoria": "Cafeterias",
-    "emoji": "♻️",
-    "dor_resolvida": "Facilita manter o próprio recipiente e reduzir descarte no consumo diário.",
-    "descricao": "Locais que aceitam o copo térmico do cliente ajudam a consolidar um ritual mais sustentável e mais estável na rotina.",
-    "url": "https://www.nespresso.com/br/pt/"
-  },
-  {
-    "id": 13,
-    "nome": "Pontos com espresso confiável para levar [Parada Curta]",
-    "categoria": "Cafeterias",
-    "emoji": "🚗",
-    "dor_resolvida": "Evita parar em qualquer lugar e sair com uma bebida ruim só por conveniência.",
-    "descricao": "Ter referências de locais com espresso bem extraído melhora muito a experiência de quem faz pit stops curtos.",
-    "url": "https://pt.wikipedia.org/wiki/Cafeteria"
-  },
-  {
-    "id": 14,
-    "nome": "Cafeteria de bairro com bom filtrado [Descoberta Local]",
-    "categoria": "Cafeterias",
-    "emoji": "📍",
-    "dor_resolvida": "Ajuda a sair da dependência de redes genéricas quando se quer mais sabor sem perder agilidade.",
-    "descricao": "Mapear cafeterias locais que trabalham bem o filtrado transforma o trajeto diário em algo mais interessante e consistente.",
-    "url": "https://www.google.com/maps"
-  },
-  {
-    "id": 15,
-    "nome": "Torra média para rotina diária [Versátil]",
-    "categoria": "Grãos",
-    "emoji": "🔥",
-    "dor_resolvida": "Resolve a indecisão entre grãos complexos demais e torras pesadas para uso recorrente.",
-    "descricao": "Torras médias equilibram doçura, estrutura e versatilidade em métodos diferentes, funcionando bem para quente e gelado.",
-    "url": "https://perfectdailygrind.com/"
-  },
-  {
-    "id": 16,
-    "nome": "Origens com doçura alta para beber na rua [Baixa Acidez]",
-    "categoria": "Grãos",
-    "emoji": "🌰",
-    "dor_resolvida": "Ajuda quem quer um café fácil de beber em movimento, sem exigir tanta análise sensorial.",
-    "descricao": "Grãos com perfil mais doce, corpo médio e baixa acidez costumam funcionar melhor em recipientes fechados e consumo apressado.",
-    "url": "https://sca.coffee/"
-  },
-  {
-    "id": 17,
-    "nome": "Microlotes frutados para café gelado [Perfil Vivo]",
-    "categoria": "Grãos",
-    "emoji": "🍑",
-    "dor_resolvida": "Dá mais personalidade ao café frio, evitando bebida sem graça após gelo e transporte.",
-    "descricao": "Perfis frutados e limpos podem sustentar melhor a experiência sensorial em receitas geladas para viagem.",
-    "url": "https://en.wikipedia.org/wiki/Coffee_bean"
-  },
-  {
-    "id": 18,
-    "nome": "Assinatura de grãos para não faltar café [Reposição]",
-    "categoria": "Grãos",
-    "emoji": "📦",
-    "dor_resolvida": "Evita ficar sem café bom em casa e cair em compras corridas de baixa qualidade.",
-    "descricao": "Assinaturas ajudam a manter estoque, testar perfis novos e estruturar melhor a rotina de quem depende do café antes de sair.",
-    "url": "https://www.mistobox.com/"
-  },
-  {
-    "id": 19,
-    "nome": "Organizador de kit com filtro e dose [Rotina Montada]",
-    "categoria": "Acessórios",
-    "emoji": "🎒",
-    "dor_resolvida": "Evita esquecer peças pequenas na pressa da saída.",
-    "descricao": "Montar um mini kit com dose pré-medida, filtro, guardanapo e colher reduz improviso e torna o preparo portátil mais fluido.",
-    "url": "https://www.muji.com/"
-  },
-  {
-    "id": 20,
-    "nome": "Gelo de café para bebida fria [Sem Diluição]",
-    "categoria": "Acessórios",
-    "emoji": "🧊",
-    "dor_resolvida": "Evita café aguado ao longo do deslocamento.",
-    "descricao": "Cubos feitos com o próprio café ajudam a manter a bebida fria sem diluir tanto o sabor em trajetos longos ou clima quente.",
-    "url": "https://en.wikipedia.org/wiki/Iced_coffee"
-  },
-  {
-    "id": 21,
-    "nome": "Copo com tampa para beber andando [Conforto]",
-    "categoria": "Acessórios",
-    "emoji": "🥤",
-    "dor_resolvida": "Melhora conforto de consumo andando, dirigindo ou esperando transporte.",
-    "descricao": "Modelos com boa ergonomia de tampa e fluxo de saída equilibrado facilitam beber sem derramar nem esfriar rápido demais.",
-    "url": "https://www.gocontigo.com/"
-  },
-  {
-    "id": 22,
-    "nome": "Filtro de papel separado por dose [Sem Bagunça]",
-    "categoria": "Acessórios",
-    "emoji": "📄",
-    "dor_resolvida": "Agiliza montagem do setup portátil e reduz improviso fora da cozinha.",
-    "descricao": "Levar filtros já separados e protegidos em um estojo pequeno melhora velocidade e evita amassar material importante.",
-    "url": "https://www.hario.com/"
-  },
-  {
-    "id": 23,
-    "nome": "Checklist de saída com café [Hábito]",
-    "categoria": "Dicas",
-    "emoji": "✅",
-    "dor_resolvida": "Reduz esquecimentos de tampa, vedação, filtro, dose extra ou gelo.",
-    "descricao": "Criar uma sequência curta antes de sair ajuda a transformar o café pra viagem em hábito estável e menos improvisado.",
-    "url": "https://pt.wikipedia.org/wiki/H%C3%A1bito"
-  },
-  {
-    "id": 24,
-    "nome": "Pré-dose de grão em potes pequenos [Porções Prontas]",
-    "categoria": "Dicas",
-    "emoji": "🫘",
-    "dor_resolvida": "Economiza tempo e evita erro de dose fora de casa.",
-    "descricao": "Separar porções de grão antes da semana começar acelera o preparo e reduz sujeira em ambientes improvisados.",
-    "url": "https://en.wikipedia.org/wiki/Coffee_preparation"
-  }
+  { "id": "eq-01", "categoria": "Equipamento", "nome": "AeroPress Go", "solucao_pratica": "Extração consistente em qualquer lugar. O próprio êmbolo funciona como copo, reduzindo o volume na mochila.", "tags": ["Portátil", "Inquebrável"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=AeroPress+Go" },
+  { "id": "eq-02", "categoria": "Equipamento", "nome": "Wacaco Minipresso GR", "solucao_pratica": "Espresso real sem eletricidade. Funciona com pressão manual, perfeito para viagens longas de carro ou trilhas.", "tags": ["Espresso", "Manual"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Wacaco+Minipresso" },
+  { "id": "eq-03", "categoria": "Equipamento", "nome": "Garrafa Térmica Stanley Classic", "solucao_pratica": "Mantém o café quente por até 20 horas. À prova de vazamentos absolutos, pode jogar no fundo da mochila sem medo.", "tags": ["Térmica", "Blindada"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Stanley+Classic" },
+  { "id": "eq-04", "categoria": "Equipamento", "nome": "Moedor Manual Timemore C2", "solucao_pratica": "Moagem rápida e uniforme com lâminas de aço. Pesando apenas 430g, garante café fresco na estrada sem pesar.", "tags": ["Moedor", "Leve"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Timemore+C2" },
+  { "id": "eq-05", "categoria": "Equipamento", "nome": "Copo KeepCup Brew", "solucao_pratica": "Copo de vidro temperado e cortiça para o trajeto casa-trabalho. Encaixa perfeitamente no porta-copos do carro.", "tags": ["Sustentável", "Trânsito"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=KeepCup" },
+  
+  { "id": "cf-01", "categoria": "Cafetaria", "nome": "Academia do Café - Takeaway", "solucao_pratica": "Filtro rápido e espresso calibrado na Zona Sul de BH. Fila expressa dedicada para quem só precisa pegar e sair.", "tags": ["BH", "Takeaway", "Savassi"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Academia+do+Cafe" },
+  { "id": "cf-02", "categoria": "Cafetaria", "nome": "OOP Café", "solucao_pratica": "Atendimento ágil de balcão e embalagens térmicas excelentes que não vazam no carro. Grãos torrados na casa.", "tags": ["BH", "Balcão Rápido"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=OOP+Cafe" },
+  { "id": "cf-03", "categoria": "Cafetaria", "nome": "Intelligenza", "solucao_pratica": "Cardápio enxuto que acelera o pedido. Os cold brews engarrafados são a salvação para os dias de calor no trânsito.", "tags": ["BH", "Cold Brew"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Intelligenza" },
+  { "id": "cf-04", "categoria": "Cafetaria", "nome": "Copo Café", "solucao_pratica": "Modelo 100% focado no \"To Go\". Pede na janela da rua, paga via aproximação e em 2 minutos o copo está na mão.", "tags": ["BH", "To Go", "Janela"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Copo+Cafe" },
+  { "id": "cf-05", "categoria": "Cafetaria", "nome": "Yes Sir", "solucao_pratica": "Café de especialidade com extração focada em consistência rápida. Excelentes opções de lanches rápidos embalados.", "tags": ["BH", "Combo Rápido"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Yes+Sir" },
+
+  { "id": "gr-01", "categoria": "Grão", "nome": "Blend 'Caminho' - Torra Média", "solucao_pratica": "Muito tolerante a erros de temperatura da água. Ideal para fazer correndo de manhã sem precisar de balança de precisão.", "tags": ["Tolerante", "Chocolate"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Blend+Caminho" },
+  { "id": "gr-02", "categoria": "Grão", "nome": "Orfeu Clássico em Drip Coffee", "solucao_pratica": "O formato Drip Coffee é a salvação no escritório ou hotel. Basta água quente, sem necessidade de nenhum equipamento extra.", "tags": ["Drip Coffee", "Sem Equipamento"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Orfeu+Drip" },
+  { "id": "gr-03", "categoria": "Grão", "nome": "Coffee Mais - Super Especial", "solucao_pratica": "Grão com notas de caramelo que harmoniza incrivelmente bem com leite de caixinha, ótimo para viagens sem geladeira.", "tags": ["Doce", "Com Leite"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Coffee+Mais" },
+  { "id": "gr-04", "categoria": "Grão", "nome": "Fazenda Pessegueiro", "solucao_pratica": "Corpo alto e baixa acidez. Mantém a estrutura de sabor mesmo quando vai esfriando lentamente dentro da garrafa térmica.", "tags": ["Corpo Alto", "Para Térmica"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Fazenda+Pessegueiro" },
+  { "id": "gr-05", "categoria": "Grão", "nome": "Baggio Aroma Chocolate Trufado", "solucao_pratica": "Aromatizado artificialmente, mas cumpre a função de disfarçar a água de má qualidade de escritórios ou bebedouros de estrada.", "tags": ["Aromatizado", "Guerreiro"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Baggio" },
+
+  { "id": "rc-01", "categoria": "Receita", "nome": "Cold Brew de Garrafa", "solucao_pratica": "Proporção 1:10 em água fria direto na garrafa. Deixe na geladeira 12h. De manhã é só coar e sair. Zero trabalho matinal.", "tags": ["Verão", "Preparo Noturno"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Cold+Brew" },
+  { "id": "rc-02", "categoria": "Receita", "nome": "AeroPress Invertida Rápida", "solucao_pratica": "20g de café fino, 100ml de água fervente. Mexa por 10s e extraia direto no copo com gelo. Iced coffee em 2 minutos.", "tags": ["2 Minutos", "Iced Coffee"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=AeroPress+Rapida" },
+  { "id": "rc-03", "categoria": "Receita", "nome": "V60 Modo Desespero", "solucao_pratica": "Moagem média-grossa. Despeje toda a água (250ml) de uma vez sobre 15g de café, sem tempo de bloom. Foco na velocidade.", "tags": ["Desespero", "Filtro"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=V60+Rapida" },
+  { "id": "rc-04", "categoria": "Receita", "nome": "Falso Mocha de Viagem", "solucao_pratica": "Misture uma dose de espresso (ou Drip Coffee forte) com um sachê de achocolatado no fundo do copo antes de por a água.", "tags": ["Hack", "Doce"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Falso+Mocha" },
+  { "id": "rc-05", "categoria": "Receita", "nome": "Chá de Casca (Cascara) To-Go", "solucao_pratica": "Aqueça a água do bebedouro, jogue a cascara do café num filtro descartável de chá. Mais cafeína que café, pronto em 3 min.", "tags": ["Cafeína Extra", "Chá"], "link_afiliado": "#", "imagem_url": "https://placehold.co/600x400/1E293B/FF6D00?text=Cascara" }
 ]

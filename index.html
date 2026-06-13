@@ -1,250 +1,83 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Café Pra Viagem | Receitas, cafeterias, grãos e equipamentos para café em movimento</title>
-  <meta name="description" content="Portal curatorial sobre café pra viagem com receitas portáteis, cafeterias recomendadas, grãos, mugs, equipamentos e dicas para quem vive em movimento." />
-  <meta name="keywords" content="café pra viagem, café para viagem, cafeteria takeaway, receitas café gelado, copo térmico, grãos de café, métodos portáteis, café em trânsito" />
-  <meta name="author" content="Café Pra Viagem" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="theme-color" content="#9a5b34" />
-  <link rel="canonical" href="https://cafepraviagem.com/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Café Pra Viagem | Praticidade e Deslocamento</title>
+    <meta name="description" content="O hub definitivo para quem precisa de café de verdade, equipamentos portáteis e cafeterias takeaway.">
+    
+    <!-- Google Tag Manager (Head) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-SUBSTITUIR');</script>
+    <!-- Fim Google Tag Manager -->
 
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Café Pra Viagem | Seu guia para beber melhor em movimento" />
-  <meta property="og:description" content="Descubra receitas, cafeterias, grãos e equipamentos que realmente funcionam para quem vive correndo, viajando ou saindo cedo com café na mão." />
-  <meta property="og:url" content="https://cafepraviagem.com/" />
-  <meta property="og:site_name" content="Café Pra Viagem" />
-  <meta property="og:image" content="https://cafepraviagem.com/assets/og-cafe-pra-viagem.jpg" />
-  <meta property="og:image:alt" content="Copo térmico com café e elementos de viagem em composição editorial" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Café Pra Viagem | Receitas, cafeterias e equipamentos para sair com café" />
-  <meta name="twitter:description" content="Um portal feito para fãs de café e pessoas em movimento que precisam beber melhor fora de casa." />
-  <meta name="twitter:image" content="https://cafepraviagem.com/assets/og-cafe-pra-viagem.jpg" />
-
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-XXXXXXXXX');
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
+    <!-- Google Tag Manager (Body Fallback) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-SUBSTITUIR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Fim Google Tag Manager -->
 
-  <a class="skip-link" href="#lista-ferramentas">Pular para os cards do portal</a>
+    <!-- Acessibilidade: Skip Link estrutural -->
+    <a class="skip-link" href="#grid-resultados">Pular diretamente para o conteúdo principal</a>
 
-  <header class="cabecalho-site">
-    <div class="container">
-      <div class="nav-bar glass-effect">
-        <a href="./index.html" class="logotipo" aria-label="Ir para a página inicial do Café Pra Viagem">
-          <svg class="brand-mark" viewBox="0 0 160 42" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 28c0 6 5 10 12 10s12-4 12-10V15H18v13Z"></path>
-              <path d="M42 18h8c5 0 9 4 9 9s-4 9-9 9h-8"></path>
-              <path d="M22 10c2-2 2-4 0-6"></path>
-              <path d="M30 10c2-2 2-4 0-6"></path>
-              <path d="M38 10c2-2 2-4 0-6"></path>
-              <path d="M78 32c8-1 13-6 17-13 6-10 14-15 29-15"></path>
-              <path d="M117 8l8-4-2 8"></path>
-            </g>
-          </svg>
-          <span>Café<span class="marca-destaque">Pra</span>Viagem</span>
-        </a>
-
-        <div class="controles-a11y" aria-label="Controles de acessibilidade e tema">
-          <button id="btn-fonte-menos" class="btn-a11y glass-btn" type="button" aria-label="Diminuir fonte">A-</button>
-          <button id="btn-fonte-mais" class="btn-a11y glass-btn" type="button" aria-label="Aumentar fonte">A+</button>
-          <button id="btn-tema" class="btn-a11y glass-btn" type="button" aria-label="Alternar tema" data-theme-toggle>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main id="conteudo-principal">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="hero-kicker">Café em trânsito, sem café ruim</p>
-          <h1 class="hero-title">Receitas, grãos, cafeterias e equipamentos para quem sai com pressa, mas não abre mão do sabor.</h1>
-          <p class="hero-subtitle">O Café Pra Viagem organiza o que realmente ajuda fãs de café e pessoas em movimento: preparo portátil, escolhas melhores na rua, recipientes confiáveis e pontos de parada com boa recomendação.</p>
-
-          <div class="hero-metricas" aria-label="Indicadores do portal">
-            <article class="metrica-card glass-effect">
-              <strong id="total-ferramentas">0</strong>
-              <small>Guias e indicações</small>
-            </article>
-            <article class="metrica-card glass-effect">
-              <strong id="total-categorias">0</strong>
-              <small>Categorias úteis</small>
-            </article>
-            <article class="metrica-card glass-effect">
-              <strong>100%</strong>
-              <small>Foco no café</small>
-            </article>
-          </div>
+    <header class="hero-section">
+        <!-- Controles de Acessibilidade Cognitiva e Visual -->
+        <div class="controles-a11y" aria-label="Controles de exibição">
+            <button type="button" id="btn-fonte-menos" aria-label="Reduzir tamanho da fonte">A-</button>
+            <button type="button" id="btn-fonte-mais" aria-label="Aumentar tamanho da fonte">A+</button>
+            <button type="button" id="btn-tema" aria-label="Alternar modo de contraste">🌓</button>
         </div>
 
-        <aside class="hero-painel glass-effect" aria-label="Resumo do posicionamento do portal">
-          <div class="painel-badge">Posicionamento editorial</div>
-          <h2>Entre o ritual do café e a lógica da viagem.</h2>
-          <p>Um hub pensado para quem tem pouco tempo, deslocamento real e zero paciência para café morno, vazamento na mochila ou parada ruim no caminho.</p>
-          <ul class="hero-pontos" role="list">
-            <li>Receitas portáteis e consistentes.</li>
-            <li>Equipamentos com foco em uso real.</li>
-            <li>Cafeterias com retirada e praticidade.</li>
-            <li>Grãos que funcionam no dia a dia.</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section class="busca-section">
-      <div class="container">
-        <div class="busca-shell glass-effect">
-          <label for="campo-busca" class="sr-only">Busque por receitas, cafeterias, grãos ou equipamentos</label>
-          <input id="campo-busca" type="search" placeholder="Ex.: cold brew, moedor portátil, cafeteria com pickup, copo térmico..." autocomplete="off" />
-          <div class="busca-acoes">
-            <button id="btn-limpar-busca" class="btn-busca secundario" type="button">Limpar</button>
-            <button id="btn-google-busca" class="btn-busca primario" type="button">Buscar no Google</button>
-          </div>
-        </div>
-
-        <nav id="bento-menu" class="bento-menu" aria-label="Filtros por categoria"></nav>
-        <p id="status-resultados" class="status-resultados" aria-live="polite">Mapeando o ecossistema do café pra viagem...</p>
-      </div>
-    </section>
-
-    <section class="bloco-editorial">
-      <div class="container bloco-editorial-grid">
-        <article class="editorial-card glass-effect">
-          <p class="section-kicker">Como selecionamos</p>
-          <h2>Critérios para proteger o seu tempo e o seu café.</h2>
-          <p>Em vez de listar qualquer item “bonito”, o portal prioriza o que resolve fricção real: temperatura, portabilidade, vedação, limpeza, velocidade de preparo e qualidade na parada rápida.</p>
-        </article>
-
-        <div class="editorial-stack">
-          <article class="mini-card glass-effect">
-            <strong>Portabilidade honesta</strong>
-            <span>Selecionamos soluções que cabem em uma rotina real, não apenas em fotos bonitas de bancada.</span>
-          </article>
-          <article class="mini-card glass-effect">
-            <strong>Parada mais inteligente</strong>
-            <span>Mapeamos cafeterias e referências úteis para quem precisa pegar o café e seguir.</span>
-          </article>
-          <article class="mini-card glass-effect">
-            <strong>Ritual sem exagero</strong>
-            <span>O foco é sair melhor preparado, não carregar um laboratório inteiro na mochila.</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="ads-shell">
-      <div class="container">
-        <div class="ads-bloco glass-effect" aria-label="Espaço preparado para publicidade">
-          <span>Apoio estratégico e publicidade</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="cards-section">
-      <div class="container">
-        <div id="lista-ferramentas" class="lista-ferramentas"></div>
-      </div>
-    </section>
-  </main>
-
-  <div id="modal-overlay" class="modal-overlay hidden" aria-hidden="true">
-    <div class="modal-content glass-effect" role="dialog" aria-modal="true" aria-labelledby="artigo-titulo">
-      <button id="fechar-modal" class="btn-fechar glass-btn" type="button" aria-label="Fechar modal">✕</button>
-
-      <div class="modal-header">
-        <div class="modal-emoji-wrap glass-effect">
-          <span id="artigo-emoji" class="modal-emoji">☕</span>
-        </div>
-        <div class="modal-header-copy">
-          <p id="artigo-categoria" class="modal-categoria">Categoria</p>
-          <h2 id="artigo-titulo">Título</h2>
-        </div>
-      </div>
-
-      <div class="dor-box glass-effect">
-        <strong>Problema que resolve</strong>
-        <p id="artigo-dor">Descrição da dor.</p>
-      </div>
-
-      <div class="artigo-corpo">
-        <p id="artigo-descricao"></p>
-        <div id="artigo-tags" class="tags-container"></div>
-
-        <dl class="detalhes-editoriais">
-          <div class="glass-effect">
-            <dt>Melhor para</dt>
-            <dd id="artigo-melhor-para"></dd>
-          </div>
-          <div class="glass-effect">
-            <dt>Ponto de atenção</dt>
-            <dd id="artigo-cuidado"></dd>
-          </div>
-        </dl>
-      </div>
-
-      <div class="acoes-ferramenta glass-effect">
-        <a id="artigo-link" class="btn-primario" href="#" target="_blank" rel="noopener noreferrer">Abrir referência oficial</a>
-        <div class="share-buttons">
-          <p class="share-title">Compartilhe esta descoberta</p>
-          <div id="botoes-compartilhamento" class="share-buttons-grid"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer class="rodape-site">
-    <div class="container">
-      <section class="rodape-top glass-effect">
-        <div>
-          <p class="section-kicker">Ecossistema do portal</p>
-          <h2>Café Pra Viagem é um hub sobre mobilidade, rotina e boas escolhas para quem vive com a xícara na mão.</h2>
-        </div>
-        <p>O conteúdo tem caráter editorial e curatorial, reunindo referências para preparo, compra, transporte e consumo de café em contexto de deslocamento real.</p>
-      </section>
-
-      <section class="parceiros-shell">
-        <h3>Projetos parceiros da rede</h3>
-        <nav id="grid-parceiros-container" class="grid-parceiros" aria-label="Sites parceiros"></nav>
-      </section>
-
-      <div class="rodape-bottom">
-        <p>© 2026 Café Pra Viagem. Portal editorial sobre café e mobilidade.</p>
-        <nav class="links-rodape" aria-label="Links institucionais">
-          <a href="sobre.html">Sobre</a>
-          <a href="privacidade.html">Privacidade</a>
+        <h1>Café Pra Viagem</h1>
+        <p>Deslocamento real exige equipamento tático. Curadoria para quem não tem tempo a perder.</p>
+        
+        <nav class="portal-filtros" aria-label="Filtros de categoria de conteúdo">
+            <button class="btn-filtro ativo" data-filtro="Todos">Todos</button>
+            <button class="btn-filtro" data-filtro="Equipamento">Equipamentos</button>
+            <button class="btn-filtro" data-filtro="Cafetaria">Cafeterias (BH)</button>
+            <button class="btn-filtro" data-filtro="Grão">Grãos</button>
+            <button class="btn-filtro" data-filtro="Receita">Receitas Rápidas</button>
         </nav>
-      </div>
-    </div>
-  </footer>
+    </header>
 
-  <script src="script.js" defer></script>
+    <!-- O contêiner usa aria-live para anunciar mudanças de filtro aos leitores de tela -->
+    <main id="grid-resultados" class="grid-container" aria-live="polite">
+        <!-- O script.js injetará os cartões de conteúdo e as divs estáticas do AdSense aqui -->
+    </main>
+
+    <footer>
+        <section class="parceiros-rodape" aria-labelledby="titulo-parceiros">
+            <h3 id="titulo-parceiros">Nossos Parceiros e Descontos</h3>
+            <!-- Degradação elegante: Se parceiros.json falhar ou vier vazio, esta div não quebra o layout -->
+            <div class="grid-parceiros" id="grid-parceiros-container"></div>
+        </section>
+        
+        <div class="rodape-legal">
+            <nav aria-label="Navegação auxiliar e termos legais">
+                <a href="politica-de-privacidade.html">Privacidade</a> | 
+                <a href="contato.html">Contato</a>
+            </nav>
+            <p>© 2026 cafepraviagem.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Acessibilidade: Camada VLibras embutida no final do DOM -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 </body>
 </html>
