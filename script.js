@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     let baseDeDados = [];
-    let configTags = {};
     let categoriaAtiva = 'Todos';
     const htmlElement = document.documentElement;
 
-    /* Acessibilidade de Tema e Tipografia */
     if (localStorage.getItem('tema') === 'light') htmlElement.setAttribute('data-theme', 'light');
     
     document.getElementById('btn-tema').addEventListener('click', () => {
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn-fonte-mais').addEventListener('click', () => { if(fontScale < 130) { fontScale += 10; atualizarFonte(); } });
     document.getElementById('btn-fonte-menos').addEventListener('click', () => { if(fontScale > 90) { fontScale -= 10; atualizarFonte(); } });
 
-    /* Fetch Simultâneo: Curadoria e Parceiros */
     carregarInfraestrutura();
 
     function carregarInfraestrutura() {
@@ -45,39 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container || !data.length) return;
         
         container.innerHTML = data.map(p => `
-            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="parceiro-link glass-effect">
-                <span style="font-size: 0.75rem; color: var(--accent-primary); text-transform: uppercase; font-weight: 700;">${p.categoria}</span>
-                <strong>${p.nome}</strong>
-                <small style="color: var(--text-muted); margin-top: 4px;">${p.descricao}</small>
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="parceiro-link glass-effect" style="border-width: 2px;">
+                <div style="display:flex; align-items:center; gap: 8px; margin-bottom: 8px;">
+                    <span aria-hidden="true" style="font-size: 1.5rem;">${p.emoji || '🔗'}</span>
+                    <span style="font-size: 0.8rem; color: var(--accent-primary); text-transform: uppercase; font-weight: 800; letter-spacing: 0.5px;">${p.categoria}</span>
+                </div>
+                <strong style="font-size: 1.3rem;">${p.nome}</strong>
+                <small style="color: var(--text-muted); margin-top: 8px; line-height: 1.4; display:block;">${p.descricao}</small>
             </a>
         `).join('');
     }
 
-    /* Motor de Busca e Menu Bento */
-    const campoBusca = document.getElementById('campo-busca');
-    const btnLimpar = document.getElementById('btn-limpar-busca');
-    const btnGoogleBusca = document.getElementById('btn-google-busca');
-
-    campoBusca.addEventListener('input', () => { atualizarUrlParam('q', campoBusca.value); renderizarInterface(); });
-    
-    btnLimpar.addEventListener('click', () => { 
-        campoBusca.value = ''; 
-        categoriaAtiva = 'Todos'; 
-        atualizarUrlParam('q', null); 
-        renderizarFiltros(); 
-        renderizarInterface(); 
-    });
-
-    if (btnGoogleBusca) {
-        btnGoogleBusca.addEventListener('click', () => {
-            const query = campoBusca.value.trim();
-            if (query) {
-                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query + ' café equipamento portátil')}`;
-                window.open(searchUrl, '_blank');
-            } else {
-                campoBusca.focus();
-            }
-        });
+    function extrairEmojiDaCategoria(categoriaNome) {
+        const item = baseDeDados.find(i => i.categoria === categoriaNome);
+        return item && item.emoji ? item.emoji : '📌';
     }
 
     function renderizarFiltros() {
@@ -87,9 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = cats.map(cat => {
             const ativo = cat === categoriaAtiva ? 'true' : 'false';
             const total = cat === 'Todos' ? baseDeDados.length : baseDeDados.filter(i => i.categoria === cat).length;
+            const icone = cat === 'Todos' ? '🧭' : extrairEmojiDaCategoria(cat);
             
             return `
                 <button type="button" class="bento-card glass-btn" data-cat="${cat}" aria-pressed="${ativo}">
+                    <span aria-hidden="true">${icone}</span> 
                     <span>${cat}</span> 
                     <strong>(${total})</strong>
                 </button>`;
@@ -103,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderizarInterface() {
-        const termoOriginal = campoBusca.value;
-        const termoNormalizado = termoOriginal.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const campoBusca = document.getElementById('campo-busca');
+        const termoNormalizado = campoBusca.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         
         const filtradas = baseDeDados.filter(item => {
             const textMatch = termoNormalizado === '' || (item.nome + " " + item.solucao_pratica + " " + item.tags.join(' ')).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(termoNormalizado);
@@ -112,43 +92,51 @@ document.addEventListener('DOMContentLoaded', () => {
             return textMatch && catMatch;
         });
 
-        document.getElementById('status-resultados').textContent = `${filtradas.length} soluções locais encontradas.`;
+        document.getElementById('status-resultados').textContent = `${filtradas.length} soluções encontradas para o seu deslocamento.`;
         const container = document.getElementById('lista-ferramentas');
         
         if (!filtradas.length) { 
-            container.innerHTML = '<p style="text-align:center; padding: 40px; color: var(--text-muted);">Nenhum equipamento ou café encontrado. Tente a "Busca no Google".</p>'; 
+            container.innerHTML = '<p style="text-align:center; padding: 40px; color: var(--text-muted);">Nenhuma solução atende a este filtro. Limpe a busca e tente novamente.</p>'; 
             return; 
         }
 
         container.innerHTML = `<div class="grid-cards">` + filtradas.map(item => `
             <article class="card glass-effect">
                 <div class="card-topo">
-                    <span class="card-tag">${item.categoria}</span>
+                    <span class="card-tag"><span aria-hidden="true">${item.emoji || '📌'}</span> ${item.categoria}</span>
                 </div>
                 <h3>${item.nome}</h3>
                 <p class="card-desc">${item.solucao_pratica}</p>
                 <div class="card-footer">
-                    <button class="btn-card-abrir glass-btn" onclick="abrirModal('${item.id}')">Ver Avaliação</button>
+                    <button class="btn-card-abrir glass-btn" onclick="abrirModal('${item.id}')">Avaliar Solução</button>
                 </div>
             </article>
         `).join('') + `</div>`;
     }
 
-    /* Lógica de Modal e Web Share API */
+    const campoBusca = document.getElementById('campo-busca');
+    campoBusca.addEventListener('input', () => { atualizarUrlParam('q', campoBusca.value); renderizarInterface(); });
+    
+    document.getElementById('btn-limpar-busca').addEventListener('click', () => { 
+        campoBusca.value = ''; 
+        categoriaAtiva = 'Todos'; 
+        atualizarUrlParam('q', null); 
+        renderizarFiltros(); 
+        renderizarInterface(); 
+    });
+
     window.abrirModal = function(id) {
         const item = baseDeDados.find(i => String(i.id) === String(id));
         if(!item) return;
 
+        document.getElementById('artigo-emoji').textContent = item.emoji || '📌';
         document.getElementById('artigo-titulo').textContent = item.nome;
         document.getElementById('artigo-categoria').textContent = item.categoria;
         document.getElementById('artigo-dor').textContent = item.solucao_pratica;
-        document.getElementById('artigo-descricao').textContent = `Tags analisadas: ${item.tags.join(', ')}.`;
+        document.getElementById('artigo-descricao').textContent = `Fatores analisados: ${item.tags.join(', ')}.`;
         
-        const btnLink = document.getElementById('artigo-link');
-        btnLink.href = item.link_afiliado || '#';
-        
-        const btnShare = document.getElementById('botoes-compartilhamento');
-        btnShare.innerHTML = `<button class="btn-share glass-btn" onclick="compartilhar('${item.nome}', '${item.id}')">Copiar Link e Indicar</button>`;
+        document.getElementById('artigo-link').href = item.link_afiliado || '#';
+        document.getElementById('botoes-compartilhamento').innerHTML = `<button class="btn-share glass-btn" onclick="compartilhar('${item.nome}', '${item.id}')">Copiar Link e Avaliar</button>`;
         
         const modal = document.getElementById('modal-overlay');
         modal.classList.remove('hidden');
@@ -183,9 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.compartilhar = async function(nome, id) {
         const urlFinal = `${window.location.origin}${window.location.pathname}?modal=${id}`;
         if (navigator.share) {
-            try { await navigator.share({ title: `Curadoria Café: ${nome}`, url: urlFinal }); } catch(err){}
+            try { await navigator.share({ title: `Avaliação: ${nome}`, url: urlFinal }); } catch(err){}
         } else {
-            navigator.clipboard.writeText(urlFinal).then(() => alert('Link estruturado copiado com sucesso!'));
+            navigator.clipboard.writeText(urlFinal).then(() => alert('Link copiado com sucesso.'));
         }
     };
 });

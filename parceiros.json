@@ -1,23 +1,50 @@
 [
   {
     "id": "p-001",
-    "nome": "Amazon Equipamentos",
-    "categoria": "Térmicos & Moedores",
-    "descricao": "Garrafas Stanley, AeroPress e moedores Timemore com entrega prime garantida.",
-    "url": "https://www.amazon.com.br/b?node=17124618011"
+    "nome": "0800 Eu Vou",
+    "categoria": "Eventos & Cultura",
+    "emoji": "🎫",
+    "descricao": "Acesse a agenda de eventos gratuitos e democratize seu acesso à cidade.",
+    "url": "https://0800euvou.com/"
   },
   {
     "id": "p-002",
-    "nome": "Shopee Filtros",
-    "categoria": "Reposição & Balanças",
-    "descricao": "Acessórios de reposição, filtros de papel e mini balanças com cupons de frete grátis.",
-    "url": "https://shopee.com.br/"
+    "nome": "Trabalho e Futuro",
+    "categoria": "Carreira & Ferramentas",
+    "emoji": "🚀",
+    "descricao": "Tome decisões inteligentes e contorne os pontos de exclusão do mercado.",
+    "url": "https://trabalhoefuturo.com/"
   },
   {
     "id": "p-003",
-    "nome": "Academia do Café",
-    "categoria": "Torrefação Especial",
-    "descricao": "Grãos recém-torrados e tolerantes à extração para o seu dia a dia.",
-    "url": "https://academiadocafe.com.br/"
+    "nome": "Viajar com Seguro",
+    "categoria": "Planejamento & Segurança",
+    "emoji": "🛡️",
+    "descricao": "A proteção exata para a sua jornada, sem jargões e letras miúdas.",
+    "url": "https://viajarcomseguro.com/"
+  },
+  {
+    "id": "p-004",
+    "nome": "Estudar Online",
+    "categoria": "Educação & Acesso",
+    "emoji": "📚",
+    "descricao": "Navegue por ferramentas inteligentes que removem barreiras do aprendizado digital.",
+    "url": "https://estudaronline.org/"
+  },
+  {
+    "id": "p-005",
+    "nome": "Café com Bytes",
+    "categoria": "Tecnologia & IA",
+    "emoji": "💻",
+    "descricao": "Análises críticas de inteligência artificial, arquitetura de informação e impacto tecnológico.",
+    "url": "#"
+  },
+  {
+    "id": "p-006",
+    "nome": "Café Pra Viagem",
+    "categoria": "Deslocamento",
+    "emoji": "☕",
+    "descricao": "Curadoria implacável de equipamentos e táticas para extração de café em trânsito.",
+    "url": "https://cafepraviagem.com/"
   }
 ]
