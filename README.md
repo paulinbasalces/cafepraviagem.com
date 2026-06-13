@@ -1,92 +1,62 @@
-# ☕ Café Pra Viagem
+# ☕ Café Pra Viagem | Documentação de Produto e Arquitetura
 
-O **Café Pra Viagem** nasceu para resolver uma cena muito específica, mas extremamente comum: a pessoa ama café, mas a rotina não permite sentar com calma para consumir bem. O deslocamento, a saída cedo, a correria entre compromissos e a dificuldade de encontrar boas opções no caminho criam um espaço perfeito para um portal editorial focado em café em movimento.
-
-Este projeto organiza, em uma arquitetura estática e escalável, um hub sobre **receitas portáteis, equipamentos, cafeterias, grãos e dicas práticas** para quem quer sair com o café sem transformar isso em um ritual inviável.
-
----
-
-## A história do produto
-
-Quando pensei neste portal, eu não queria criar “mais um site sobre café”. A internet já está cheia de listas genéricas, reviews pouco honestos e conteúdos que ignoram a vida real. O que me interessava era um recorte mais inteligente: **o café como companheiro de deslocamento**.
-
-É aí que nasce o Café Pra Viagem.
-
-A proposta é simples: reduzir atrito. Ajudar o usuário a descobrir o que funciona quando ele precisa preparar em casa, levar com segurança, beber no caminho, escolher melhor um recipiente, decidir qual grão faz sentido para uma rotina portátil ou até encontrar uma cafeteria com recomendação razoável quando sentar é quase impossível.
+**Domínio:** cafepraviagem.com  
+**Nicho:** Equipamentos portáteis, táticas de extração e cafeterias *takeaway* para consumo em deslocamento.  
+**Modelo de Negócio:** Curadoria editorial monetizada via AdSense (densidade moderada) e links de afiliados (*cross-selling*).
 
 ---
 
-## Visão do produto
-
-**Problema:** amantes de café e pessoas em movimento convivem com escolhas ruins, excesso de improviso, pouca curadoria específica para portabilidade e uma experiência frequentemente frustrante entre praticidade e qualidade.
-
-**Solução:** um portal curatorial com estrutura leve, busca local, filtros Bento, badges semânticas, modais compartilháveis e base de dados em JSON para organizar o ecossistema do café pra viagem com clareza editorial.
+## 📌 Visão do Produto
+O **Café Pra Viagem** resolve pontos ocultos de exclusão no ecossistema do café especial. Projetado para quem opera sob restrição de tempo e mobilidade, o portal atua como um hub curatorial que filtra equipamentos e rotas baseando-se em uso real: resistência a impacto, retenção térmica e tolerância a erros de extração. O design prioriza a utilidade prática em detrimento da estética puramente contemplativa.
 
 ---
 
-## Estratégia editorial
+## 🏗️ Arquitetura Técnica e Governança
 
-O portal não pretende esgotar o universo do café. Ele opera em um território muito claro:
+O portal opera como um Gerador de Sites Estáticos (SSG) executado inteiramente no lado do cliente (Client-Side Rendering), hospedado via GitHub Pages/Cloudflare. 
 
-- Café para quem está saindo.
-- Café para quem não consegue parar.
-- Café para quem quer praticidade, sem cair em soluções ruins.
-- Café para quem busca melhores decisões em receitas, compra, transporte e parada rápida.
+### 1. Acessibilidade Estrutural (A11y)
+A acessibilidade neste projeto é estrutural, não um anexo estético.
+*   **HTML Semântico & Foco:** Marcação rigorosa com landmarks (`<main>`, `<nav>`, `<header>`, `<footer>`). Gerenciamento de foco nativo para navegação via teclado e modais interativos (`aria-hidden`, `aria-modal`).
+*   **Prevenção de Fadiga Cognitiva:** Sistema de design parametrizado para contraste WCAG AA/AAA. Controles de ampliação tipográfica (A-/A+) e alternância de tema (Light/Dark) com memorização no `localStorage`.
+*   **Camada de Tradução:** Integração do widget VLibras embutido globalmente. *Nota de Governança:* O VLibras atua como localização, não substituindo a obrigação do uso de `aria-labels` e hierarquia de cabeçalhos.
 
-Essa clareza de posicionamento permite que o conteúdo tenha utilidade real e identidade própria.
+### 2. Gestão de Dados (Headless JS)
+*   **Desacoplamento Rigoroso:** Nenhum conteúdo editorial está hardcoded no HTML. O motor JavaScript realiza o *fetch* assíncrono simultâneo (via `Promise.all`) de dois arquivos JSON:
+    *   `dados.json`: Diretório principal de curadoria.
+    *   `parceiros.json`: Rede de *cross-linking* para portais aliados e links de afiliados.
+*   **Degradação Elegante:** Se a requisição de parceiros falhar, o DOM recolhe a seção sem quebrar a interface principal.
 
----
-
-## Arquitetura do projeto
-
-O Café Pra Viagem foi estruturado em uma arquitetura **serverless/static**, usando apenas:
-
-- `HTML`
-- `CSS`
-- `JavaScript`
-- `JSON`
-
-Essa decisão reduz custo de infraestrutura, melhora velocidade, simplifica manutenção e fortalece SEO técnico. O conteúdo vive desacoplado em arquivos de dados, permitindo expansão curatorial com baixo atrito operacional.
-
-### Estrutura dos arquivos
-
-- `index.html` — interface principal do portal.
-- `style.css` — design system glassmorphism com light/dark mode.
-- `script.js` — motor de busca, filtros, modais, tags e parceiros.
-- `dados.json` — base principal da curadoria.
-- `parceiros.json` — ecossistema de projetos parceiros.
-- `tags.json` — configuração visual das badges.
-- `sobre.html` — metodologia editorial.
-- `privacidade.html` — política de privacidade e navegação local.
-- `robots.txt` — orientação para crawlers.
-- `sitemap.xml` — indexação técnica do portal.
+### 3. Monetização e Rastreamento Estratégico
+*   **Tag Management:** Controle de métricas e conversão centralizado no Google Tag Manager (GTM), instalado no `<head>` e no `<body>` (fallback).
+*   **Prevenção de CLS (Cumulative Layout Shift):** O AdSense opera sob uma injeção de frequência moderada (a cada 6 cartões). As `<div class="area-adsense">` possuem dimensões pré-estabelecidas no CSS para evitar o colapso estrutural da página durante o carregamento do anúncio em conexões 4G instáveis.
 
 ---
 
-## Direção de experiência
+## ⚠️ Análise de Riscos e Trade-offs Conhecidos
 
-A identidade do produto mistura dois imaginários:
+Qualquer operador deste portal deve estar ciente dos seguintes compromissos assumidos na arquitetura:
 
-1. **Café** — calor, textura, ritual, aroma, pausa, torra, matéria.
-2. **Viagem** — deslocamento, rota, tempo curto, movimento, praticidade, transição.
-
-Essa combinação orienta cores, tipografia, linguagem, estrutura visual e priorização do conteúdo.
-
----
-
-## O que torna este portal relevante
-
-- Resolve um contexto de uso específico e frequente.
-- Não trata café como decoração, mas como rotina prática.
-- Facilita descoberta de receitas, itens e referências sem confundir o usuário.
-- Pode crescer organicamente com SEO, monetização e expansão editorial.
-- Faz parte de uma rede de portais com arquitetura reutilizável e identidade própria.
+1. **Gargalo de Performance (TBT):** A execução paralela do GTM (AdSense + Analytics) e do VLibras (renderização 3D) no carregamento da página eleva o *Total Blocking Time*. Em conexões móveis lentas, isso pode impactar o *Core Web Vitals*.
+2. **Escalabilidade do JSON Base:** A busca no lado do cliente garante interatividade instantânea (zero delay de rede na filtragem). Contudo, se o arquivo `dados.json` ultrapassar a marca de 1.500 a 2.000 nós, o processamento de arrays comprometerá a CPU de smartphones de entrada. Caso o catálogo escale para este volume, a migração para renderização no lado do servidor (SSR) ou paginação via API será mandatória.
+3. **Conflitos de Cache (Cloudflare):** A utilização de recursos de otimização agressiva do Cloudflare (como *Rocket Loader* ou minificação de JS em tempo real) apresenta alto risco de quebra dos scripts assíncronos do AdSense e GTM. É estritamente recomendado configurar *Page Rules* para contornar essas otimizações nas rotas de monetização.
 
 ---
 
-## Declaração final
+## 🔄 Manual de Operação de Conteúdo
 
-Como Product Manager, eu penso este projeto como uma camada de utilidade editorial. O papel do Café Pra Viagem não é falar mais alto do que o usuário. É ajudá-lo a sair melhor preparado.
+A adição ou remoção de entidades não exige conhecimento em programação, apenas rigor na estrutura de dados. 
 
-**Paulin Basalces**  
-Product Manager
+### Atualizando o Diretório (`dados.json`)
+Siga a taxonomia exata abaixo. Falhas em chaves ou vírgulas quebrarão o *parser* do JavaScript.
+
+```json
+{
+  "id": "eq-00X",
+  "categoria": "Equipamento",
+  "nome": "Nome do Produto",
+  "emoji": "🎒",
+  "solucao_pratica": "Descreva a dor física ou de tempo que este item resolve.",
+  "tags": ["Tag1", "Tag2"],
+  "link_afiliado": "[https://link-de-conversao.com](https://link-de-conversao.com)"
+}
