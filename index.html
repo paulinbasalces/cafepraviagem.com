@@ -4,80 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Café Pra Viagem | Praticidade e Deslocamento</title>
-    <meta name="description" content="O hub definitivo para quem precisa de café de verdade, equipamentos portáteis e cafeterias takeaway.">
-    
-    <!-- Google Tag Manager (Head) -->
+    <title>Café Pra Viagem | Equipamentos Portáteis e Cafeterias Takeaway</title>
+    <meta name="description" content="O hub definitivo para quem busca café de qualidade em movimento. Avaliamos equipamentos portáteis, garrafas térmicas e cafeterias expressas.">
+    <meta name="keywords" content="café especial, garrafa térmica, aeropress, moedor manual, cold brew, takeaway, café em viagem">
+    <link rel="canonical" href="https://cafepraviagem.com/">
+
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-SUBSTITUIR');</script>
-    <!-- Fim Google Tag Manager -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Google Tag Manager (Body Fallback) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-SUBSTITUIR"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- Fim Google Tag Manager -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-SUBSTITUIR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- Acessibilidade: Skip Link estrutural -->
-    <a class="skip-link" href="#grid-resultados">Pular diretamente para o conteúdo principal</a>
+    <a class="skip-link" href="#lista-ferramentas">Pular direto para os equipamentos e cafés</a>
 
-    <header class="hero-section">
-        <!-- Controles de Acessibilidade Cognitiva e Visual -->
-        <div class="controles-a11y" aria-label="Controles de exibição">
-            <button type="button" id="btn-fonte-menos" aria-label="Reduzir tamanho da fonte">A-</button>
-            <button type="button" id="btn-fonte-mais" aria-label="Aumentar tamanho da fonte">A+</button>
-            <button type="button" id="btn-tema" aria-label="Alternar modo de contraste">🌓</button>
+    <header class="cabecalho-site">
+        <div class="container nav-bar glass-effect">
+            <a class="logotipo" href="./index.html">CaféPra<span>Viagem</span></a>
+            <div class="controles-a11y">
+                <button type="button" id="btn-fonte-menos" class="btn-a11y glass-btn" aria-label="Diminuir tamanho da fonte">A-</button>
+                <button type="button" id="btn-fonte-mais" class="btn-a11y glass-btn" aria-label="Aumentar tamanho da fonte">A+</button>
+                <button type="button" id="btn-tema" class="btn-a11y glass-btn" aria-label="Alternar modo escuro e claro">🌓</button>
+            </div>
         </div>
-
-        <h1>Café Pra Viagem</h1>
-        <p>Deslocamento real exige equipamento tático. Curadoria para quem não tem tempo a perder.</p>
-        
-        <nav class="portal-filtros" aria-label="Filtros de categoria de conteúdo">
-            <button class="btn-filtro ativo" data-filtro="Todos">Todos</button>
-            <button class="btn-filtro" data-filtro="Equipamento">Equipamentos</button>
-            <button class="btn-filtro" data-filtro="Cafetaria">Cafeterias (BH)</button>
-            <button class="btn-filtro" data-filtro="Grão">Grãos</button>
-            <button class="btn-filtro" data-filtro="Receita">Receitas Rápidas</button>
-        </nav>
     </header>
 
-    <!-- O contêiner usa aria-live para anunciar mudanças de filtro aos leitores de tela -->
-    <main id="grid-resultados" class="grid-container" aria-live="polite">
-        <!-- O script.js injetará os cartões de conteúdo e as divs estáticas do AdSense aqui -->
+    <main class="container" id="conteudo-principal">
+        <section class="hero">
+            <p class="hero-kicker">Hub Curatorial Aberto</p>
+            <h1 class="hero-title">Equipamento tático e café de verdade em movimento</h1>
+            <p class="hero-subtitle">Mapeamos o ecossistema de extração portátil e cafeterias rápidas para quem tem deslocamento real e zero paciência para café morno.</p>
+            
+            <div class="hero-metricas">
+                <span class="metrica-card glass-effect"><strong id="total-ferramentas">0</strong><small>Soluções Analisadas</small></span>
+                <span class="metrica-card glass-effect"><strong id="total-categorias">0</strong><small>Categorias</small></span>
+                <span class="metrica-card glass-effect"><strong>100%</strong><small>Uso Real</small></span>
+            </div>
+            
+            <div class="busca-container" role="search">
+                <div class="busca-form glass-effect">
+                    <input id="campo-busca" type="search" placeholder="Buscar garrafas, moedores, métodos ou cafeterias..." autocomplete="off">
+                    <div class="busca-acoes">
+                        <button type="button" id="btn-limpar-busca" class="btn-busca secundario" aria-label="Limpar resultados">Limpar</button>
+                        <button type="button" id="btn-google-busca" class="btn-busca primario" aria-label="Pesquisar no Google">Buscar no Google</button>
+                    </div>
+                </div>
+            </div>
+            
+            <nav id="bento-menu" class="bento-grid-container" aria-label="Filtros por categoria"></nav>
+        </section>
+
+        <section class="painel-curadoria">
+            <div>
+                <p class="section-kicker">Transparência Editorial</p>
+                <h2 id="titulo-curadoria">Critérios rigorosos para proteger sua extração</h2>
+                <p>Nossa análise foca na eliminação de "barreiras ocultas" do dia a dia, como vazamentos na mochila, retenção térmica ineficiente ou demoras injustificadas no balcão.</p>
+            </div>
+            <ul class="criterios-lista">
+                <li class="criterio-card glass-effect">
+                    <strong>Portabilidade e Resistência</strong>
+                    <span>Validamos o peso, o material e a capacidade de suportar impactos reais em viagens, trilhas e trajetos urbanos.</span>
+                </li>
+                <li class="criterio-card glass-effect">
+                    <strong>Consistência e Tempo</strong>
+                    <span>Priorizamos métodos de extração tolerantes a erros, que entregam um bom copo em menos de 3 minutos, sem exigir balanças de precisão.</span>
+                </li>
+            </ul>
+        </section>
+
+        <p id="status-resultados" class="status-resultados" aria-live="polite">Mapeando soluções de café em trânsito...</p>
+        <div id="lista-ferramentas"></div>
     </main>
 
-    <footer>
-        <section class="parceiros-rodape" aria-labelledby="titulo-parceiros">
-            <h3 id="titulo-parceiros">Nossos Parceiros e Descontos</h3>
-            <!-- Degradação elegante: Se parceiros.json falhar ou vier vazio, esta div não quebra o layout -->
-            <div class="grid-parceiros" id="grid-parceiros-container"></div>
-        </section>
-        
-        <div class="rodape-legal">
-            <nav aria-label="Navegação auxiliar e termos legais">
-                <a href="politica-de-privacidade.html">Privacidade</a> | 
-                <a href="contato.html">Contato</a>
-            </nav>
-            <p>© 2026 cafepraviagem.com</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-
-    <!-- Acessibilidade: Camada VLibras embutida no final do DOM -->
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
+    <div id="modal-overlay" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-content glass-effect" role="dialog" aria-modal="true" aria-labelledby="artigo-titulo">
+            <button type="button" class="btn-fechar glass-btn" id="fechar-modal" aria-label="Fechar janela">✕</button>
+            <div class="modal-header-compacto">
+                <span id="artigo-emoji" class="emoji-medio glass-effect">☕</span>
+                <div>
+                    <h2 id="artigo-titulo">Carregando...</h2>
+                    <span id="artigo-categoria" class="tag-categoria">Categoria</span>
+                </div>
+            </div>
+            <div class="dor-box glass-effect">
+                <strong>Problema de Deslocamento Resolvido:</strong>
+                <p id="artigo-dor"></p>
+            </div>
+            <div class="artigo-corpo">
+                <p id="artigo-descricao"></p>
+            </div>
+            <div class="acoes-ferramenta glass-effect">
+                <a id="artigo-link" href="#" target="_blank" class="btn-primario" rel="noopener noreferrer">Acessar Detalhes / Comprar</a>
+                <div class="share-buttons">
+                    <p class="share-title">Compartilhe esta solução com sua rede:</p>
+                    <div class="share-icons" id="botoes-compartilhamento"></div>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+    <footer class="rodape-site glass-effect">
+        <div class="container">
+            <div class="projetos-parceiros">
+                <h3>Equipe seu kit com nossos parceiros:</h3>
+                <nav class="grid-parceiros" id="grid-parceiros-container" aria-label="Parceiros de equipamentos e grãos"></nav>
+            </div>
+
+            <div class="rodape-main">
+                <p><strong>Café Pra Viagem</strong> &copy; 2026. Feito para quem não para.</p>
+                <nav class="links-rodape" aria-label="Links institucionais">
+                    <a href="politica-de-privacidade.html">Privacidade</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
