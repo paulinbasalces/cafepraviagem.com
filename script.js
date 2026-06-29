@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return; 
         }
 
+        // Isso limpará o Fallback Estático feito para o AdSense e injetará os dados dinâmicos limpos para o usuário final.
         container.innerHTML = `<div class="grid-cards">` + filtradas.map(item => `
             <article class="card glass-effect">
                 <div class="card-topo">
@@ -133,10 +134,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('artigo-titulo').textContent = item.nome;
         document.getElementById('artigo-categoria').textContent = item.categoria;
         document.getElementById('artigo-dor').textContent = item.solucao_pratica;
-        document.getElementById('artigo-descricao').textContent = `Fatores analisados: ${item.tags.join(', ')}.`;
+        document.getElementById('artigo-descricao').textContent = `Fatores Técnicos Avaliados e Validados: ${item.tags.join(' / ')}.`;
         
         document.getElementById('artigo-link').href = item.link_afiliado || '#';
-        document.getElementById('botoes-compartilhamento').innerHTML = `<button class="btn-share glass-btn" onclick="compartilhar('${item.nome}', '${item.id}')">Copiar Link e Avaliar</button>`;
+        document.getElementById('botoes-compartilhamento').innerHTML = `<button class="btn-share glass-btn" onclick="compartilhar('${item.nome}', '${item.id}')">Copiar Link Privado</button>`;
         
         const modal = document.getElementById('modal-overlay');
         modal.classList.remove('hidden');
@@ -171,9 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.compartilhar = async function(nome, id) {
         const urlFinal = `${window.location.origin}${window.location.pathname}?modal=${id}`;
         if (navigator.share) {
-            try { await navigator.share({ title: `Avaliação: ${nome}`, url: urlFinal }); } catch(err){}
+            try { await navigator.share({ title: `Curadoria Técnica: ${nome}`, url: urlFinal }); } catch(err){}
         } else {
-            navigator.clipboard.writeText(urlFinal).then(() => alert('Link copiado com sucesso.'));
+            navigator.clipboard.writeText(urlFinal).then(() => alert('Link da curadoria copiado com sucesso.'));
         }
     };
 });
